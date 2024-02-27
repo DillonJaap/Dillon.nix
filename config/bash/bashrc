@@ -1,0 +1,99 @@
+#!/bin/bash
+set -o vi i
+
+HOSTIP="localhost"
+HISTSIZE=
+HISTFILESIZE=
+
+# Sheel Prompt
+trimPWD()
+{
+    trimmed_PWD=""
+    if [ $(echo $PWD | grep -c $HOME ) -eq 1 ]; then
+        trimmed_PWD=$(echo $PWD | sed "s|$HOME|/~|g")
+        # shorten if pwd is to long
+        if [ $( echo $trimmed_PWD | wc -m ) -gt 119 ]; then
+            trimmed_PWD=$(echo $trimmed_PWD | awk -F "/" '{print $1"/"$2"/"$3 "/.../" $NF}')
+        fi
+        echo $trimmed_PWD
+    else
+        echo $PWD
+    fi
+}
+export PS1="┌─[\u \$(trimPWD)]\n└──$ "
+
+if [[ $(uname -o) = "Darwin" ]]; then
+    source ~/export-file.sh
+fi
+
+# vim exports
+export MYVIMRC="$HOME/.vimrc"
+export MYVIMSESSIONS="$HOME/.vim/sessions"
+
+# other exports
+export LAMBDA_DEV_ENV='dev-djaap'
+export PATH=$PATH:/opt/homebrew/bin
+
+#sg exports
+export SRC_ENDPOINT="https://ciorg.sourcegraphcloud.com"
+export SRC_ACCESS_TOKEN="sgp_9157c91b8c096a61_a73555c53aa86da888a0b89bdd463cdb999987c5"
+
+# aliases
+alias ls='exa'
+alias vi='nvim'
+alias pretty-output="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/pretty-output.sh"
+alias formatst="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/formatst.sh"
+alias start-service="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/start-service.sh"
+alias stop-service="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/stop-service.sh"
+alias sb="source ~/.bashrc"
+alias jqv="pbpaste | jq"
+alias bp="pbpaste | base64 -d"
+alias ts="~/.scripts/tmux-session-manager"
+alias kubelog='kubectl logs -f --since=5s $(kubectl get pods --no-headers -o custom-columns=":metadata.name"  | fzf --height=20% --border=rounded --header="Select Pod" --header-first) | pretty-output'
+alias uploadlambda="$HOME/code/gitlab.com/ciorg/bridge/am-scripts/uploadlambda.sh"
+alias git-df='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias kl='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_light.conf'
+alias kd='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_dark.conf'
+alias gitcc='git rev-parse HEAD | pbcopy'
+alias awslogin='aws sso login --profile default'
+
+# Salesforce aliases
+alias sflogin='sf org login web --instance-url=https://compassionci--djaap.sandbox.lightning.force.com'
+
+jqve() {
+    pbpaste | sed -e 's/\\//g' | jq
+}
+
+gittag() {
+    tag=$1
+    git tag -d $tag
+    git push origin :refs/tags/$tag
+    git tag $tag
+    git push && git push origin refs/tags/$tag
+}
+
+go_update_deps() {
+    git checkout main || git checkout master &&\
+        git pull &&\
+        git checkout -b "noprod-US72527-update-gomod" &&\
+        go mod edit -go=1.19 &&\
+        go mod tidy &&\
+        [[ ! -d "integration" ]] || go fix --tags="integration" ./integration &&\
+        go get -u -t ./... &&\
+        go mod tidy &&\
+        git commit -am "update" &&\
+        git push --set-upstream origin noprod-US72527-update-gomod
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+[ -f $HOME/.scripts/exports ] && source $HOME/.scripts/exports
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
