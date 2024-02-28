@@ -58,7 +58,7 @@ alias gitcc='git rev-parse HEAD | pbcopy'
 alias awslogin='aws sso login --profile default'
 
 # Salesforce aliases
-alias sflogin='sf org login web --instance-url=https://compassionci--djaap.sandbox.lightning.force.com'
+alias sflogin='sf org login web --instance-url=https://compassionci--djaap.sandbox.my.salesforce.com'
 
 jqve() {
     pbpaste | sed -e 's/\\//g' | jq

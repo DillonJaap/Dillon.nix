@@ -1,15 +1,5 @@
 { pkgs, ... }:
 
-# TODO do I need this?
-/*
-let
-files = if system == "aarch64-darwin" then {
-		".yabairc".source = ../config/yabai/yabairc;
-	}
-else
-	{};
-in
-*/
 {
 # add home-manager user settings here
 # generic: fzf, tree, kitty
