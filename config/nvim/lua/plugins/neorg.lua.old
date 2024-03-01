@@ -1,0 +1,48 @@
+return {
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		dependencies = { "nvim-neorg/neorg-telescope" },
+		config = function()
+			require('neorg').setup {
+				load = {
+					["core.defaults"] = {
+						config = {
+							default_keybinds = true,
+						},
+					},
+					["core.dirman"] = {
+						config = {
+							workspaces = {
+								home = "~/Notes/home",
+								default = "~/Notes/home",
+								work = "~/Notes/work",
+								bible = "~/Notes/bible",
+							},
+							autochdir = true, -- Automatically change the directory to the current workspace's root every time
+							index = "index.norg", -- The name of the main (root) .norg file
+						}
+					},
+					["core.completion"] = {
+						config = {
+							engine = 'nvim-cmp'
+						}
+					},
+					["core.journal"] = {
+						config = {
+							workspace = "home",
+							journal_folder = 'journal'
+						}
+					},
+					["core.concealer"] = {},
+					["core.integrations.telescope"] = {},
+					["core.export"] = {},
+					["core.export.markdown"] = {},
+					["core.ui"] = {},
+					["core.tempus"] = {},
+					["core.ui.calendar"] = {},
+				}
+			}
+		end,
+	}
+}

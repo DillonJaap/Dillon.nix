@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
+let 
+symLink = config.lib.file.mkOutOfStoreSymlink;
+in
 {
 # add home-manager user settings here
 # generic: fzf, tree, kitty
@@ -8,12 +11,18 @@
 # commands for building / check
 # darwin-rebuild check --flake ".#aarch64"
 # darwin-rebuild build --flake ".#aarch64"
-	home.packages = with pkgs; [git neovim ocaml go odin gcc fzf];
+# darwin-rebuild switch --flake ".#aarch64"
+	home.packages = with pkgs; [git ocaml go odin gcc fzf];
 	home.stateVersion = "23.11";
-	home.file = {
-		".yabairc".source = ../config/yabai/yabairc;
+	xdg.configFile = {
+		yabairc = {
+			source = ../config/yabai/yabairc;
+		};
+		nvim = {
+			source = ../config/nvim;
+			recursive = true;
+		};
 	};
-
 
 	programs = {
 		bash = {
@@ -23,14 +32,23 @@
 		};
 		kitty = {
 			enable = true; 
-			extraConfig  = builtins.readFile ../config/kitty/kitty.conf;
+			shellIntegration.enableBashIntegration = true;
+			extraConfig = builtins.readFile ../config/kitty/kitty.conf;
 		};
-		fzf ={
+		fzf = {
 			enable = true;
 			enableBashIntegration = true;
 		};
-		gh ={
+		gh = {
+			settings.git_protocol = "https";
+			settings.editor = "nvim";
+			settings.aliases = {co = "pr checkout";  pv = "pr view";};
 			enable = true;
 		};
+		neovim = {
+			enable = true;
+			defaultEditor = true;
+		};
 	};
+
 }
