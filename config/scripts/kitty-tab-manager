@@ -1,0 +1,43 @@
+#!/bin/bash
+FUZZY_FINDER_CMD="fzy --lines=40"
+
+function get_working_dirs() {
+    if [[ -f /tmp/items ]]; then
+        export WORKING_DIRS=$(cat /tmp/items)
+    else
+        local working_dirs=$(fd --type d --hidden --no-ignore '.+.git$' $HOME/code)
+        working_dirs2=$(fd --type d --hidden --no-ignore '^\.git$' $HOME/code)
+        working_dirs2=$(dirname $working_dirs2)
+        working_dirs=$(printf "$working_dirs $working_dirs2 $HOME/Notes $HOME/.config $HOME/kickstart.nix")
+        export WORKING_DIRS=$working_dirs
+        echo $WORKING_DIRS > /tmp/items
+    fi
+}
+
+[[ $1 = "update-list" ]] && rm /tmp/items
+
+if [[ $1 != "update-list" ]] && [[ $# -eq 1 ]]; then
+    selected_dir=$1
+else
+    [[ -z $WORKING_DIRS ]] && get_working_dirs
+    selected_dir=$(echo $WORKING_DIRS | tr ' ' '\n' | $FUZZY_FINDER_CMD)
+fi
+
+# exit if nothing selected_dir
+[[ -z $selected_dir ]] && exit 0
+echo $selected_dir
+
+# Set the tab name
+tab_name=$(basename "$selected_dir" | tr . _)
+
+# Check if a tab with the given name already exists
+existing_tab=$(kitty @ ls | jq '.[]."tabs"[]."windows"[]."title"' | grep $tab_name)
+if [ -n "$existing_tab" ]; then
+    # Switch to the existing tab with the given name
+    kitty @ focus-tab --match title:"$tab_name"
+else
+    # Create a new tab with the specified name
+    kitty @ launch --type tab --title "$tab_name" --cwd "$selected_dir"
+fi
+
+exit 1

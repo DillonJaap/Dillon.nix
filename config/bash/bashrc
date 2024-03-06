@@ -57,6 +57,8 @@ alias kd='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gru
 alias gitcc='git rev-parse HEAD | pbcopy'
 alias awslogin='aws sso login --profile default'
 
+alias nixos='qemu-system-x86_64 -m 8G -smp 6 -drive file=~/qemu-images/nixos-arm.qcow2,if=virtio -vga virtio -display default,show-cursor=on -usb -device usb-tablet'
+
 # Salesforce aliases
 alias sflogin='sf org login web --instance-url=https://compassionci--djaap.sandbox.my.salesforce.com'
 

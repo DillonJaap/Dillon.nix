@@ -18,9 +18,15 @@ in
 	xdg.configFile = {
 		yabairc = {
 			source = ../config/yabai/yabairc;
+			target = "../.yabairc";
 		};
 		nvim = {
 			source = symLink ../config/nvim;
+			recursive = true;
+		};
+		scripts = {
+			source = symLink ../config/scripts;
+			target = "../.scripts/";
 			recursive = true;
 		};
 	};
