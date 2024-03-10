@@ -16,20 +16,20 @@
 				inherit inputs;
 				username = "DJaap"; 
 			};
-    nixos-system = import ./system/nixos.nix {
-      inherit inputs;
-      username = "dillon"; 
-      password = "temppass"; 
-    };
+			nixos-system = import ./system/nixos.nix {
+				inherit inputs;
+				username = "dillon"; 
+				password = "temppass"; 
+			};
     in
     {
       darwinConfigurations = {
         aarch64 = darwin-system "aarch64-darwin";
         x86_64 = darwin-system "x86_64-darwin";
       };
-    nixosConfigurations = {
-      aarch64 = nixos-system "aarch64-linux";
-      x86_64 = nixos-system "x86_64-linux";
-    };
-    };
+			nixosConfigurations = {
+				aarch64 = nixos-system "aarch64-linux";
+				x86_64 = nixos-system "x86_64-linux";
+			};
+		};
 }
