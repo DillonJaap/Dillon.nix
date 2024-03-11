@@ -13,7 +13,7 @@ in
     # modules: allows for reusable code
     modules = [
       {
-        boot.loader.systemd-boot.enable = true;
+        boot.loader.systemd-boot.enable = false;
         boot.loader.efi.canTouchEfiVariables = true;
         security.sudo.enable = true;
         security.sudo.wheelNeedsPassword = false;
