@@ -12,7 +12,7 @@ in
 # darwin-rebuild check --flake ".#aarch64"
 # darwin-rebuild build --flake ".#aarch64"
 # darwin-rebuild switch --flake ".#aarch64"
-	home.packages = with pkgs; [git ocaml go odin gcc fzf];
+	home.packages = with pkgs; [ocaml go odin gcc cargo fzf];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
@@ -30,12 +30,23 @@ in
 			recursive = true;
 		};
 	};
+	xsession = {
+		enable = true;
+		windowManager.awesome = {
+			enable = true;
+		};
+	};
 
 	programs = {
 		bash = {
 			enable = true;
 			bashrcExtra  = builtins.readFile ../config/bash/bashrc;
 			profileExtra = builtins.readFile ../config/bash/bash_profile;
+		};
+		git = {
+			enable = true;
+			userEmail = "dillonjaap@gmail.com";
+			userName = "dillon";
 		};
 		kitty = {
 			enable = true; 

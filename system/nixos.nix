@@ -26,6 +26,11 @@ in
         services.openssh.enable = true;
         services.openssh.settings.PasswordAuthentication = false;
         services.openssh.settings.PermitRootLogin = "no";
+		services.xserver = {
+			enable = true;
+			autorun = false;
+			displayManager.startx.enable = true;
+		};
         users.mutableUsers = false;
         users.users."${username}" = {
           extraGroups = ["wheel"];
