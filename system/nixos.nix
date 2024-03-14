@@ -13,8 +13,14 @@ in
     # modules: allows for reusable code
     modules = [
       {
-        boot.loader.systemd-boot.enable = false;
-        boot.loader.efi.canTouchEfiVariables = true;
+				boot.loader = {
+					grub = {
+						enable = true;
+						device = "nodev";
+					};
+					efi.canTouchEfiVariables = true;
+				};
+#boot.loader.systemd-boot.enable = false;
         security.sudo.enable = true;
         security.sudo.wheelNeedsPassword = false;
         services.openssh.enable = true;
