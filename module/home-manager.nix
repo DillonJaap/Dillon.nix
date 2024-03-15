@@ -12,7 +12,7 @@ in
 # darwin-rebuild check --flake ".#aarch64"
 # darwin-rebuild build --flake ".#aarch64"
 # darwin-rebuild switch --flake ".#aarch64"
-	home.packages = with pkgs; [ocaml go odin gcc cargo fzf eza];
+	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
@@ -27,6 +27,11 @@ in
 		awesome = {
 			source = symLink ../config/awesome;
 			recursive = true;
+		};
+		xinitrc = {
+			source = symLink ../config/xinitrc;
+			recursive = true;
+			target = "../.xinitrc";
 		};
 		scripts = {
 			source = symLink ../config/scripts;

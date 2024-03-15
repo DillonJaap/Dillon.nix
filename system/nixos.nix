@@ -13,24 +13,29 @@ in
     # modules: allows for reusable code
     modules = [
       {
-				boot.loader = {
-					grub = {
-						enable = true;
-						device = "nodev";
-					};
-					efi.canTouchEfiVariables = true;
-				};
+		boot.loader = {
+			grub = {
+				enable = true;
+				device = "nodev";
+			};
+			efi.canTouchEfiVariables = true;
+		};
 #boot.loader.systemd-boot.enable = false;
         security.sudo.enable = true;
         security.sudo.wheelNeedsPassword = false;
         services.openssh.enable = true;
         services.openssh.settings.PasswordAuthentication = false;
         services.openssh.settings.PermitRootLogin = "no";
+		services.qemuGuest.enable = true; #for vm
 		services.xserver = {
 			enable = true;
 			autorun = false;
 			displayManager.startx.enable = true;
+			videoDrivers = [
+				"nvidia"
+			];
 		};
+		hardware.opengl.enable = true;
         users.mutableUsers = false;
         users.users."${username}" = {
           extraGroups = ["wheel"];
