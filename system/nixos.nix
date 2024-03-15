@@ -21,18 +21,18 @@ in
 			efi.canTouchEfiVariables = true;
 		};
 #boot.loader.systemd-boot.enable = false;
-        security.sudo.enable = true;
-        security.sudo.wheelNeedsPassword = false;
-        services.openssh.enable = true;
-        services.openssh.settings.PasswordAuthentication = false;
-        services.openssh.settings.PermitRootLogin = "no";
+		security.sudo.enable = true;
+		security.sudo.wheelNeedsPassword = false;
+		services.openssh.enable = true;
+		services.openssh.settings.PasswordAuthentication = false;
+		services.openssh.settings.PermitRootLogin = "no";
 		services.qemuGuest.enable = true; #for vm
 		services.xserver = {
 			enable = true;
 			autorun = false;
 			displayManager.startx.enable = true;
 			videoDrivers = [
-				"nvidia"
+				"virtio_gpu"
 			];
 		};
 		hardware.opengl.enable = true;
@@ -44,6 +44,8 @@ in
           password = password;
         };
         system.stateVersion = "23.11";
+		nixpkgs.config.allowUnfree = true;
+		environment.variables.LIBGL_ALWAYS_SOFTWARE = "1";
       }
       hardware-configuration
       configuration

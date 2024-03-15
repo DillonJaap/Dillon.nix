@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 
 let 
-symLink = config.lib.file.mkOutOfStoreSymlink;
+    nixpkgs.config.allowUnfree = true;
+	symLink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
 # add home-manager user settings here
