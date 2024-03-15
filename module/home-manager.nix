@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 
 let 
-symLink = config.lib.file.mkOutOfStoreSymlink;
+    nixpkgs.config.allowUnfree = true;
+	symLink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
 # add home-manager user settings here
@@ -12,7 +13,7 @@ in
 # darwin-rebuild check --flake ".#aarch64"
 # darwin-rebuild build --flake ".#aarch64"
 # darwin-rebuild switch --flake ".#aarch64"
-	home.packages = with pkgs; [ocaml go odin gcc cargo fzf];
+	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
@@ -23,6 +24,15 @@ in
 		nvim = {
 			source = symLink ../config/nvim;
 			recursive = true;
+		};
+		awesome = {
+			source = symLink ../config/awesome;
+			recursive = true;
+		};
+		xinitrc = {
+			source = symLink ../config/xinitrc;
+			recursive = true;
+			target = "../.xinitrc";
 		};
 		scripts = {
 			source = symLink ../config/scripts;
