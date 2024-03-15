@@ -36,7 +36,7 @@ export PATH=$PATH:/opt/homebrew/bin
 
 #sg exports
 export SRC_ENDPOINT="https://ciorg.sourcegraphcloud.com"
-export SRC_ACCESS_TOKEN="sgp_9157c91b8c096a61_a73555c53aa86da888a0b89bdd463cdb999987c5"
+export SRC_ACCESS_TOKEN="sgp_9157c91b8c096a61_a73555c53aa86da888a0b89bdd463cdb999987c5" #TODO make a new one
 
 # aliases
 alias ls='eza'
