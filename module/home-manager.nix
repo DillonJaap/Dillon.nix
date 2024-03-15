@@ -30,6 +30,7 @@ in
 			recursive = true;
 		};
 	};
+
 	xsession = {
 		enable = true;
 		windowManager.awesome = {
