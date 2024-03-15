@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
 let 
-    nixpkgs.config.allowUnfree = true;
 	symLink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
@@ -13,38 +12,18 @@ in
 # darwin-rebuild check --flake ".#aarch64"
 # darwin-rebuild build --flake ".#aarch64"
 # darwin-rebuild switch --flake ".#aarch64"
-	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep];
+	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep skate];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
-		yabairc = {
-			source = ../config/yabai/yabairc;
-			target = "../.yabairc";
-		};
 		nvim = {
 			source = symLink ../config/nvim;
 			recursive = true;
-		};
-		awesome = {
-			source = symLink ../config/awesome;
-			recursive = true;
-		};
-		xinitrc = {
-			source = symLink ../config/xinitrc;
-			recursive = true;
-			target = "../.xinitrc";
 		};
 		scripts = {
 			source = symLink ../config/scripts;
 			target = "../.scripts/";
 			recursive = true;
-		};
-	};
-
-	xsession = {
-		enable = true;
-		windowManager.awesome = {
-			enable = true;
 		};
 	};
 

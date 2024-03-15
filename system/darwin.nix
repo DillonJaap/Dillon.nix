@@ -4,7 +4,7 @@ system:
 
 let
   system-config = import ../module/configuration.nix;
-  home-manager-config = import ../module/home-manager.nix;
+  home-manager-config = import ../module/home-manager-darwin.nix;
 in
 inputs.darwin.lib.darwinSystem {
   inherit system;

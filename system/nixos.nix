@@ -5,7 +5,7 @@
 }: system: let
   configuration = import ../module/configuration.nix;
   hardware-configuration = import /etc/nixos/hardware-configuration.nix; # copy this locally to no longer run --impure
-  home-manager = import ../module/home-manager.nix;
+  home-manager = import ../module/home-manager-nixos.nix;
 in
   inputs.nixpkgs.lib.nixosSystem {
     inherit system;

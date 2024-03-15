@@ -1,11 +1,32 @@
 #!/bin/bash
 
-
 HOSTIP="localhost"
 HISTSIZE=
 HISTFILESIZE=
 
-# Sheel Prompt
+# aliases
+alias ls='eza'
+alias vi='nvim'
+alias sb="source ~/.bashrc"
+alias jqv="pbpaste | jq"
+alias bp="pbpaste | base64 -d"
+alias ts="~/.scripts/tmux-session-manager"
+alias git-df='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias kl='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_light.conf'
+alias kd='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_dark.conf'
+alias gitcc='git rev-parse HEAD | pbcopy'
+
+
+# MAC stuff
+if [[ $(uname -o) = "Darwin"  ]]; then
+    alias nixos='qemu-system-x86_64 -m 8G -smp 6 -drive file=~/qemu-images/nixos-arm.qcow2,if=virtio -vga std -display default,show-cursor=on -usb -device usb-tablet'
+    export PATH=$PATH:/opt/homebrew/bin
+    # AM Team stuff
+    [[ -f ~/am.sh ]] && source ~/am.sh
+fi
+
+# Shell Prompt
 trimPWD()
 {
     trimmed_PWD=""
@@ -22,45 +43,6 @@ trimPWD()
 }
 export PS1="┌─[\u \$(trimPWD)]\n└──$ "
 
-if [[ $(uname -o) = "Darwin" ]]; then
-    source ~/export-file.sh
-fi
-
-# vim exports
-export MYVIMRC="$HOME/.vimrc"
-export MYVIMSESSIONS="$HOME/.vim/sessions"
-
-# other exports
-export LAMBDA_DEV_ENV='dev-djaap'
-export PATH=$PATH:/opt/homebrew/bin
-
-#sg exports
-export SRC_ENDPOINT="https://ciorg.sourcegraphcloud.com"
-export SRC_ACCESS_TOKEN="sgp_9157c91b8c096a61_a73555c53aa86da888a0b89bdd463cdb999987c5" #TODO make a new one
-
-# aliases
-alias ls='eza'
-alias vi='nvim'
-alias pretty-output="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/pretty-output.sh"
-alias formatst="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/formatst.sh"
-alias start-service="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/start-service.sh"
-alias stop-service="$HOME/code/gitlab.com/ciorg/bridge/am-start-service/stop-service.sh"
-alias sb="source ~/.bashrc"
-alias jqv="pbpaste | jq"
-alias bp="pbpaste | base64 -d"
-alias ts="~/.scripts/tmux-session-manager"
-alias kubelog='kubectl logs -f --since=5s $(kubectl get pods --no-headers -o custom-columns=":metadata.name"  | fzf --height=20% --border=rounded --header="Select Pod" --header-first) | pretty-output'
-alias uploadlambda="$HOME/code/gitlab.com/ciorg/bridge/am-scripts/uploadlambda.sh"
-alias git-df='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias kl='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_light.conf'
-alias kd='kitty @ set-colors --all --configured ~/.config/kitty/kitty-themes/gruvbox_dark.conf'
-alias gitcc='git rev-parse HEAD | pbcopy'
-alias awslogin='aws sso login --profile default'
-
-alias nixos='qemu-system-x86_64 -m 8G -smp 6 -drive file=~/qemu-images/nixos-arm.qcow2,if=virtio -vga std -display default,show-cursor=on -usb -device usb-tablet'
-
-# Salesforce aliases
-alias sflogin='sf org login web --instance-url=https://compassionci--djaap.sandbox.my.salesforce.com'
 
 jqve() {
     pbpaste | sed -e 's/\\//g' | jq
@@ -87,6 +69,11 @@ go_update_deps() {
         git push --set-upstream origin noprod-US72527-update-gomod
 }
 
+# vim exports
+export MYVIMRC="$HOME/.vimrc"
+export MYVIMSESSIONS="$HOME/.vim/sessions"
+
+# NVM settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -95,7 +82,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     source $HOME/.bash-git-prompt/gitprompt.sh
 fi
-
-[ -f $HOME/.scripts/exports ] && source $HOME/.scripts/exports
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,18 +1,8 @@
 #!/bin/bash
 
-export GOPRIVATE=*gitlab.com/ciorg/*
-export HOST_IP=localhost
-export PORT=:8090
 export PATH=~/go/bin:~/bin:$PATH
 export PATH="~/.scripts:$PATH"
 export PATH="$PATH:/Users/DJaap/Library/Python/3.9/bin"
-
-if [[ $(uname -o) = "Darwin" ]]; then
-    source ~/.gitlab_creds
-    export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
 source ~/.bashrc
 
 
