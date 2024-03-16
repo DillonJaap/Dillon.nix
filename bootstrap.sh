@@ -6,4 +6,5 @@ skate link
 skate sync
 skate get "github public key"@keys > $HOME/.ssh/id_ed25519.pub
 skate get "github private key"@keys > $HOME/.ssh/id_ed25519
+git clone git@github.com:DillonJaap/Dillon.nix.git
 exit
