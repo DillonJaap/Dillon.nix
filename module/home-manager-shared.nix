@@ -10,7 +10,7 @@ in
 
 	xdg.configFile = {
 		nvim = {
-			source = symLink ../config/nvim;
+			source = ../config/nvim;
 			recursive = true;
 		};
 		scripts = {

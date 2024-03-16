@@ -17,6 +17,7 @@ in
 			grub = {
 				enable = true;
 				device = "nodev";
+				efiSupport = true;
 			};
 			efi.canTouchEfiVariables = true;
 		};
@@ -45,7 +46,7 @@ in
         };
         system.stateVersion = "23.11";
 		nixpkgs.config.allowUnfree = true;
-#environment.variables.LIBGL_ALWAYS_SOFTWARE = "1";
+		environment.variables.LIBGL_ALWAYS_SOFTWARE = "1";
       }
       hardware-configuration
       configuration
