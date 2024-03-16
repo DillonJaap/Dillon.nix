@@ -5,7 +5,7 @@ let
 in
 {
 # add home-manager user settings here
-	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep skate];
+	home.packages = with pkgs; [ocaml go gcc cargo fzf eza ripgrep skate nerdfonts];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
