@@ -12,15 +12,20 @@
 
   outputs = inputs@{ self, darwin, home-manager, nixpkgs, ... }:
     let
-      darwin-system = import ./system/darwin.nix { 
+		darwin-system = import ./system/darwin.nix { 
 				inherit inputs;
 				username = "DJaap"; 
 			};
-			nixos-system = import ./system/nixos.nix {
-				inherit inputs;
-				username = "dillon"; 
-				password = "temppass"; 
-			};
+		nixos-system = import ./system/nixos.nix {
+			inherit inputs;
+			username = "dillon"; 
+			password = "temppass"; 
+		};
+		nixos-notes-system = import ./system/nixos.nix {
+			inherit inputs;
+			username = "dillon"; 
+			password = "temppass"; 
+		};
     in
     {
       darwinConfigurations = {
@@ -30,6 +35,7 @@
       nixosConfigurations = {
         aarch64 = nixos-system "aarch64-linux";
         x86_64 = nixos-system "x86_64-linux";
+        notes = nixos-notes-system "x86_64-linux";
 	  };
 	};
 }
