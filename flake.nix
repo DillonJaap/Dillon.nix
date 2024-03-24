@@ -21,7 +21,7 @@
 			username = "dillon"; 
 			password = "temppass"; 
 		};
-		nixos-notes-system = import ./system/nixos.nix {
+		nixos-notes-system = import ./system/nixos-notes.nix {
 			inherit inputs;
 			username = "dillon"; 
 			password = "temppass"; 

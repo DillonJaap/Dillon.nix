@@ -5,7 +5,7 @@ let
 in
 {
 # add home-manager user settings here
-	home.packages = with pkgs; [logseq skate nerdfonts];
+	home.packages = with pkgs; [gcc logseq skate nerdfonts];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
@@ -17,6 +17,11 @@ in
 			source = symLink ../config/scripts;
 			target = "../.scripts/";
 			recursive = true;
+		};
+		xinitrc = {
+			source = symLink ../config/xinitrc;
+			recursive = true;
+			target = "../.xinitrc";
 		};
 	};
 

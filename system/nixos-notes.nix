@@ -5,7 +5,7 @@
 }: system: let
   configuration = import ../module/configuration.nix;
   hardware-configuration = import /etc/nixos/hardware-configuration.nix; # copy this locally to no longer run --impure
-  home-manager = import ../module/home-manager-nixos-notes.nix;
+  home-manager = import ../module/home-manager-notes.nix;
 in
   inputs.nixpkgs.lib.nixosSystem {
     inherit system;
@@ -13,34 +13,74 @@ in
     # modules: allows for reusable code
     modules = [
       {
-		boot.loader = {
-			grub = {
-				enable = true;
-				device = "nodev";
-				efiSupport = true;
-			};
-			efi.canTouchEfiVariables = true;
-		};
-#boot.loader.systemd-boot.enable = false;
-		security.sudo.enable = true;
-		security.sudo.wheelNeedsPassword = false;
-		services.openssh.enable = true;
-		services.openssh.settings.PasswordAuthentication = false;
-		services.openssh.settings.PermitRootLogin = "no";
-		services.xserver = {
-			enable = true;
-			autorun = false;
-			displayManager.startx.enable = true;
-		};
+        # Bootloader.
+        boot.loader = {
+         grub = {
+          enable = true;
+          device = "nodev";
+          efiSupport = true;
+         };
+         efi.canTouchEfiVariables = true;
+        };
+
+        #boot.loader.systemd-boot.enable = false;
+
+        # Enable networking
+        networking.networkmanager.enable = true;
+
+        # Set your time zone.
+        time.timeZone = "America/Denver";
+
+        # Select internationalisation properties.
+        i18n.defaultLocale = "en_US.UTF-8";
+
+        i18n.extraLocaleSettings = {
+          LC_ADDRESS = "en_US.UTF-8";
+          LC_IDENTIFICATION = "en_US.UTF-8";
+          LC_MEASUREMENT = "en_US.UTF-8";
+          LC_MONETARY = "en_US.UTF-8";
+          LC_NAME = "en_US.UTF-8";
+          LC_NUMERIC = "en_US.UTF-8";
+          LC_PAPER = "en_US.UTF-8";
+          LC_TELEPHONE = "en_US.UTF-8";
+          LC_TIME = "en_US.UTF-8";
+        };
+
+        security.sudo.enable = true;
+        security.sudo.wheelNeedsPassword = false;
+        services.openssh.enable = true;
+        services.openssh.settings.PasswordAuthentication = false;
+        services.openssh.settings.PermitRootLogin = "no";
+        services.xserver = {
+         enable = true;
+         autorun = false;
+         displayManager.startx.enable = true;
+        };
+
+        # Define a user account. Don't forget to set a password with ‘passwd’.
         users.mutableUsers = false;
         users.users."${username}" = {
-          extraGroups = ["wheel"];
+          extraGroups = ["wheel" "networkmanager"];
           home = "/home/${username}";
           isNormalUser = true;
           password = password;
         };
+
+        # Enable automatic login for the user.
+        services.getty.autologinUser = "dillon";
+
+        nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
+        # List packages installed in system profile. To search, run:
+        # $ nix search wget
+        #environment.systemPackages = with pkgs; [
+        #  vim # Do not forget to add an editor to edit configuration.nix! 
+        #  The Nano editor is also installed by default.
+        #  wget
+        #];
+
+
         system.stateVersion = "23.11";
-		nixpkgs.config.allowUnfree = true;
       }
       hardware-configuration
       configuration
