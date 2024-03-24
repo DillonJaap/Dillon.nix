@@ -1,1 +1,3 @@
 exec awesome
+exec logseq
+xdotool search --sync "Logseq" windowsize --sync 1280 720 windowmove --sync 0 0

@@ -5,7 +5,7 @@ let
 in
 {
 # add home-manager user settings here
-	home.packages = with pkgs; [gcc logseq skate nerdfonts];
+	home.packages = with pkgs; [gcc logseq skate nerdfonts xdotool];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
