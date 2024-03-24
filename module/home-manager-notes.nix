@@ -23,6 +23,10 @@ in
 			recursive = true;
 			target = "../.xinitrc";
 		};
+		awesome = {
+			source = symLink ../config/awesome;
+			recursive = true;
+		};
 	};
 
 	programs = {
@@ -54,6 +58,13 @@ in
 		neovim = {
 			enable = true;
 			defaultEditor = true;
+		};
+	};
+
+	xsession = {
+		enable = true;
+		windowManager.awesome = {
+			enable = true;
 		};
 	};
 
