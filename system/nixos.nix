@@ -56,6 +56,14 @@ in
 			enable = true;
 			autorun = false;
 			displayManager.startx.enable = true;
+            #extraDisplaySettings = "Virtual 3440 1440";
+			resolutions = 
+				[
+				  {
+					x = 3400;
+					y = 1440;
+				  }
+				];
 			videoDrivers = [
 				"virtio_gpu"
 			];
