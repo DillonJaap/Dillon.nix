@@ -64,7 +64,7 @@ in
         # Define a user account. Don't forget to set a password with ‘passwd’.
         users.mutableUsers = false;
         users.users."${username}" = {
-          extraGroups = ["wheel"];
+          extraGroups = ["wheel" "networkmanager"];
           home = "/home/${username}";
           isNormalUser = true;
           password = password;
