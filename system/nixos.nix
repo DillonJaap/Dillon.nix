@@ -61,10 +61,15 @@ in
 			];
 		};
 
+        # Guest drivers
+		services.spice-webdavd.enable = true;
+		services.spice-vdagentd.enable = true;
+		services.spice-autorandr.enable = true;
+
         # Define a user account. Don't forget to set a password with ‘passwd’.
         users.mutableUsers = false;
         users.users."${username}" = {
-          extraGroups = ["wheel" "networkmanager"];
+           extraGroups = ["wheel" "networkmanager"];
           home = "/home/${username}";
           isNormalUser = true;
           password = password;
@@ -89,6 +94,7 @@ in
 
         # hardware
 		hardware.opengl.enable = true;
+
       }
       hardware-configuration
       configuration
