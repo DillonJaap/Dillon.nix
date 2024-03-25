@@ -13,6 +13,7 @@ in
     # modules: allows for reusable code
     modules = [
       {
+        # Bootloader.
 		boot.loader = {
 			grub = {
 				enable = true;
@@ -21,7 +22,30 @@ in
 			};
 			efi.canTouchEfiVariables = true;
 		};
-#boot.loader.systemd-boot.enable = false;
+
+        #boot.loader.systemd-boot.enable = false;
+
+        # Enable networking
+        networking.networkmanager.enable = true;
+
+        # Set your time zone.
+        time.timeZone = "America/Denver";
+
+        # Select internationalisation properties.
+        i18n.defaultLocale = "en_US.UTF-8";
+
+        i18n.extraLocaleSettings = {
+          LC_ADDRESS = "en_US.UTF-8";
+          LC_IDENTIFICATION = "en_US.UTF-8";
+          LC_MEASUREMENT = "en_US.UTF-8";
+          LC_MONETARY = "en_US.UTF-8";
+          LC_NAME = "en_US.UTF-8";
+          LC_NUMERIC = "en_US.UTF-8";
+          LC_PAPER = "en_US.UTF-8";
+          LC_TELEPHONE = "en_US.UTF-8";
+          LC_TIME = "en_US.UTF-8";
+        };
+
 		security.sudo.enable = true;
 		security.sudo.wheelNeedsPassword = false;
 		services.openssh.enable = true;
@@ -36,7 +60,8 @@ in
 				"virtio_gpu"
 			];
 		};
-		hardware.opengl.enable = true;
+
+        # Define a user account. Don't forget to set a password with ‘passwd’.
         users.mutableUsers = false;
         users.users."${username}" = {
           extraGroups = ["wheel"];
@@ -44,9 +69,26 @@ in
           isNormalUser = true;
           password = password;
         };
-        system.stateVersion = "23.11";
-		nixpkgs.config.allowUnfree = true;
+
+
+        # env variables
 		environment.variables.LIBGL_ALWAYS_SOFTWARE = "1";
+
+        # nixpkgs settings
+		nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
+        # List packages installed in system profile. To search, run:
+        # $ nix search wget
+        #environment.systemPackages = with pkgs; [
+        #  vim # Do not forget to add an editor to edit configuration.nix! 
+        #  The Nano editor is also installed by default.
+        #  wget
+        #];
+
+        system.stateVersion = "23.11";
+
+        # hardware
+		hardware.opengl.enable = true;
       }
       hardware-configuration
       configuration
