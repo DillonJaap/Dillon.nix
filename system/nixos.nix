@@ -81,6 +81,7 @@ in
 
         # nixpkgs settings
 		nixpkgs.config.allowUnfree = true;
+		nixpkgs.config.allowUnsupportedSystem = true; 
         nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
         # List packages installed in system profile. To search, run:
         # $ nix search wget
