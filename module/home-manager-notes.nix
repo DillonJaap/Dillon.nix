@@ -24,7 +24,7 @@ in
 			target = "../.xinitrc";
 		};
 		awesome = {
-			source = symLink ../config/awesome;
+			source = symLink ../config/awesome-notes;
 			recursive = true;
 		};
 	};
