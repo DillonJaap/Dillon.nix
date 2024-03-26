@@ -33,7 +33,7 @@ in
 		bash = {
 			enable = true;
 			bashrcExtra  = builtins.readFile ../config/bash/bashrc;
-			profileExtra = builtins.readFile ../config/bash/bash_profile;
+				profileExtra = builtins.readFile ../config/bash/bash_profile + "\nstartx";
 		};
 		git = {
 			enable = true;
