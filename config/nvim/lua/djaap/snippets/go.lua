@@ -251,7 +251,7 @@ ls.add_snippets("go", {
 	-- CharaChorder snippets
 	-------------------------------------------------------------------------------
 	s(
-		{ trig = "function~~ ", name = "function", snippetType = "autosnippet" },
+		{ trig = "function~~ ", name = "function snip", snippetType = "autosnippet" },
 		fmt(
 			[[
 			func {}({}) {} {{

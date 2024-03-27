@@ -16,7 +16,6 @@ in
 			source = ../config/yabai/yabairc;
 			target = "../.yabairc";
 		};
-
 	};
 
 }
