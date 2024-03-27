@@ -148,40 +148,6 @@ end
 
 ls.add_snippets("go", {
 	s(
-		"func",
-		fmt(
-			[[
-			func {}({}) {} {{
-				{}
-			}}
-			]],
-			{
-				i(1, "name"),
-				i(2),
-				i(3),
-				c(4, { fmt('{}\n\treturn {} ', { i(2), i(1) }), i(nil) }),
-			}
-		)
-	),
-	s(
-		"meth",
-		fmt(
-			[[
-			func ({} {}) {}({}) {} {{
-				{}
-			}}
-			]],
-			{
-				transform(1, extractCapitalLetters),
-				i(1),
-				i(2, "name"),
-				i(3),
-				i(4),
-				c(5, { fmt('{}\n\treturn {} ', { i(2), i(1) }), i(nil) }),
-			}
-		)
-	),
-	s(
 		"funct",
 		fmt(
 			[[
@@ -280,16 +246,12 @@ ls.add_snippets("go", {
 
 			}
 		)
-	)
-})
-
--------------------------------------------------------------------------------
--- CharaChorder snippets
--------------------------------------------------------------------------------
-
-ls.add_snippets("go", {
+	),
+	-------------------------------------------------------------------------------
+	-- CharaChorder snippets
+	-------------------------------------------------------------------------------
 	s(
-		{ trig = "func~~ ", name = "function", snippetType = "autosnippet" },
+		{ trig = "function~~ ", name = "function", snippetType = "autosnippet" },
 		fmt(
 			[[
 			func {}({}) {} {{
