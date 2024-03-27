@@ -328,7 +328,7 @@ ls.add_snippets("go", {
 			[[
 			if {} {{
 				{}
-			}} 
+			}}
 			]],
 			{
 				i(1),
@@ -342,7 +342,7 @@ ls.add_snippets("go", {
 			[[
 			else if {} {{
 				{}
-			}} 
+			}}
 			]],
 			{
 				i(1),
@@ -356,7 +356,7 @@ ls.add_snippets("go", {
 			[[
 			else {{
 				{}
-			}} 
+			}}
 			]],
 			{
 				i(1),

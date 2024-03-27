@@ -8,6 +8,7 @@ in
 	imports = [
 		./home-manager-shared.nix
 	];
+	home.packages = with pkgs; [aws-sam-cli nodePackages_latest.aws-cdk awscli];
 	home.stateVersion = "23.11";
 
 	xdg.configFile = {
