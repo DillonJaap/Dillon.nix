@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Shell launcher for kitty terminal.
+# Picks the preferred shell (nushell via nix, or fallback to bash),
+# ensuring the nix environment is available on both macOS and Linux.
+
+# If nix isn't already on PATH (e.g. kitty launched outside a login shell),
+# source the nix daemon script installed by Determinate Systems.
+# This sets up NIX_PATH, adds nix binaries to PATH, and configures
+# the nix daemon socket. The path is the same on both macOS and Linux.
+if ! command -v nix >/dev/null 2>&1; then
+  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  fi
+fi
+
+# Prefer nushell installed via nix/home-manager.
+# --login ensures nushell sources its login config (env.nu, config.nu).
+# Falls back to bash as a login shell so bash_profile gets sourced.
+if [ -x "$HOME/.nix-profile/bin/nu" ]; then
+  exec "$HOME/.nix-profile/bin/nu" --login "$@"
+else
+  exec /bin/bash --login "$@"
+fi
