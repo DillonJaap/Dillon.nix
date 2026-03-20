@@ -3,7 +3,7 @@ let
   symLink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   home.sessionVariables = {
     XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
   };
@@ -143,9 +143,11 @@ in
       profileExtra = ''source "${repoPath}/config/bash/bash_profile"'';
     };
     git = {
+      settings = {
+        user.email = "dillonjaap@gmail.com";
+        user.name = username;
+      };
       enable = true;
-      userEmail = "dillonjaap@gmail.com";
-      userName = username;
     };
     fzf = {
       enable = true;
