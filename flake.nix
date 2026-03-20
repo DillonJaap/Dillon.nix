@@ -14,8 +14,7 @@
 
   outputs = inputs@{ self, home-manager, nixpkgs, ... }:
   let
-    repoPath = toString self;
-    mkHome = { system, username, homeDirectory }:
+    mkHome = { system, username, homeDirectory, repoPath ? "${homeDirectory}/Dillon.nix" }:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = { inherit username repoPath; };
