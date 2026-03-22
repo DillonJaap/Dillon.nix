@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -12,22 +13,25 @@
 
   };
 
-  outputs = inputs@{ self, home-manager, nixpkgs, ... }:
-  let
-    mkHome = { system, username, homeDirectory, repoPath ? "${homeDirectory}/Dillon.nix" }:
-      home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = { inherit username repoPath; };
-        modules = [
-          ./module/home-manager.nix
-          {
-            home.username = username;
-            home.homeDirectory = homeDirectory;
-            home.stateVersion = "25.11";
-          }
-        ];
+  outputs = inputs@{ self, home-manager, nixpkgs, nixpkgs-unstable, ... }:
+let
+  mkHome = { system, username, homeDirectory, repoPath ? "${homeDirectory}/Dillon.nix" }:
+    home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      extraSpecialArgs = {
+        inherit username repoPath;
+        pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       };
-  in
+      modules = [
+        ./module/home-manager.nix
+        {
+          home.username = username;
+          home.homeDirectory = homeDirectory;
+          home.stateVersion = "25.11";
+        }
+      ];
+    };
+in
   {
     homeConfigurations = {
       mac-aarch64 = mkHome {

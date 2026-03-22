@@ -1,4 +1,4 @@
-{ pkgs, config, username, repoPath, ... }:
+{ pkgs, pkgs-unstable, config, username, repoPath, ... }:
 let
   symLink = config.lib.file.mkOutOfStoreSymlink;
 in
@@ -11,7 +11,8 @@ in
   home.packages = with pkgs; [
     home-manager
     # languages / package managers
-    go ocaml opam odin cargo gleam nushell erlang
+    go ocaml opam odin cargo nushell erlang
+    pkgs-unstable.gleam
 
     # cli tools
     fzf eza ripgrep skate gh
