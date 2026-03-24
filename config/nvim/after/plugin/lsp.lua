@@ -233,6 +233,12 @@ vim.lsp.config("rescriptls", {
 	},
 })
 
+vim.lsp.enable("expert")
+vim.lsp.config("expert", {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 -- TailwindCSS (default + gleam)
 vim.lsp.enable("tailwindcss")
 vim.lsp.config("tailwindcss", {

@@ -1,18 +1,33 @@
 { pkgs, pkgs-unstable, config, username, repoPath, ... }:
 let
   symLink = config.lib.file.mkOutOfStoreSymlink;
+  isDarwin = pkgs.stdenv.isDarwin;
+  nushellConfigDir = if isDarwin
+    then "Library/Application Support/nushell"
+    else ".config/nushell";
 in
 {
   home.stateVersion = "25.11";
+
   home.sessionVariables = {
     XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+  };
+
+  # Symlink nushell config into the OS-appropriate directory.
+  # macOS defaults to ~/Library/Application Support/nushell;
+  # Linux uses ~/.config/nushell (via XDG).
+  home.file = {
+    "${nushellConfigDir}/config.nu".source = symLink "${repoPath}/config/nushell/config.nu";
+    "${nushellConfigDir}/env.nu".source = symLink "${repoPath}/config/nushell/env.nu";
+    "${nushellConfigDir}/git-completions.nu".source = symLink "${repoPath}/config/nushell/git-completions.nu";
+    "${nushellConfigDir}/gh-completions.nu".source = symLink "${repoPath}/config/nushell/gh-completions.nu";
   };
 
   home.packages = with pkgs; [
     home-manager
     # languages / package managers
-    go ocaml opam odin cargo nushell erlang
-    pkgs-unstable.gleam
+    go ocaml opam odin cargo nushell 
+    erlang elixir pkgs-unstable.gleam
 
     # cli tools
     fzf eza ripgrep skate gh
@@ -34,6 +49,7 @@ in
       target = "../.scripts/";
       recursive = true;
     };
+
     "kitty/kitty.conf".text = ''
       # ======================
       # FONT SETTINGS
@@ -162,11 +178,7 @@ in
         aliases = { co = "pr checkout"; pv = "pr view"; };
       };
     };
-    nushell = {
-      enable = true;
-      configFile.source = symLink "${repoPath}/config/nushell/config.nu";
-      envFile.source = symLink "${repoPath}/config/nushell/env.nu";
-    };
+
     neovim = {
       enable = true;
       defaultEditor = true;
