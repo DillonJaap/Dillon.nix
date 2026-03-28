@@ -1,11 +1,16 @@
 return {
-	{ "neovim/nvim-lspconfig" }, -- Required
 	{
-		"mason-org/mason.nvim",
-		opts = {},
-		config = function() 
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		config = function()
 			require("mason").setup()
-		end 
+			require("mason-lspconfig").setup({
+				automatic_enable = true,
+			})
+		end,
 	},
 	-- Autocompletion
 	{ "hrsh7th/nvim-cmp" }, -- Required

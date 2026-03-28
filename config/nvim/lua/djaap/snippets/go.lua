@@ -12,8 +12,18 @@ local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 --local rep = require("luasnip.extras").rep
 
-local ts_locals = require("nvim-treesitter.locals")
 local get_tsnode_text = vim.treesitter.get_node_text
+
+-- Walk up the tree and collect all ancestor nodes (replaces ts_locals.get_scope_tree)
+local function get_scope_tree(node)
+	local scopes = {}
+	local cur = node
+	while cur do
+		table.insert(scopes, cur)
+		cur = cur:parent()
+	end
+	return scopes
+end
 
 -- Clear go snippets
 collection.clear_snippets("go")
@@ -86,7 +96,7 @@ local get_return_nodes = function(info)
 	)
 
 	local cursor_node = vim.treesitter.get_node()
-	local scope = ts_locals.get_scope_tree(cursor_node, 0)
+	local scope = get_scope_tree(cursor_node)
 
 	local function_node
 
