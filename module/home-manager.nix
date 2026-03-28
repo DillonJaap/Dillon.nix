@@ -35,9 +35,8 @@ in
     # fonts
     nerd-fonts.iosevka
 
-    # libs
-    jdk
-    rebar3
+    # other
+    jdk rebar3
   ];
 
   xdg.configFile = {
@@ -114,42 +113,48 @@ in
       map alt+x close_tab
 
       # ======================
-      # COLOR SCHEME (Kanagawa Dragon)
+      # COLOR SCHEME (Evergarden Spring)
       # ======================
 
-      background #181616
-      foreground #c5c9c5
-      selection_background #2D4F67
-      selection_foreground #C8C093
-      url_color #72A7BC
-      cursor #C8C093
+      background #2b3438
+      foreground #f8f9e8
+      selection_background #4a585c
+      selection_foreground #f8f9e8
+      url_color #b3e3ca
+      cursor #cbe3b3
       cursor_text_color background
 
-      active_tab_background #12120f
-      active_tab_foreground #C8C093
+      active_tab_background #232a2e
+      active_tab_foreground #cbe3b3
       active_tab_font_style bold
-      inactive_tab_background #12120f
-      inactive_tab_foreground #a6a69c
+      inactive_tab_background #232a2e
+      inactive_tab_foreground #6f8788
       inactive_tab_font_style normal
 
-      color0  #0d0c0c
-      color1  #c4746e
-      color2  #8a9a7b
-      color3  #c4b28a
-      color4  #8ba4b0
-      color5  #a292a3
-      color6  #8ea4a2
-      color7  #C8C093
-      color8  #a6a69c
-      color9  #E46876
-      color10 #87a987
-      color11 #E6C384
-      color12 #7FB4CA
-      color13 #938AA9
-      color14 #7AA89F
-      color15 #c5c9c5
-      color16 #b6927b
-      color17 #b98d7b
+      # black / bright black
+      color0  #3e4a4f
+      color8  #58686d
+      # red / bright red
+      color1  #f57f82
+      color9  #f57f82
+      # green / bright green
+      color2  #cbe3b3
+      color10 #dbe6af
+      # yellow / bright yellow
+      color3  #f5d098
+      color11 #f7a182
+      # blue / bright blue
+      color4  #b2caed
+      color12 #afd9e6
+      # magenta / bright magenta
+      color5  #d2bdf3
+      color13 #f3c0e5
+      # cyan / bright cyan
+      color6  #b3e3ca
+      color14 #b3e6db
+      # white / bright white
+      color7  #adc9bc
+      color15 #f8f9e8
     '';
   };
 

@@ -233,10 +233,14 @@ vim.lsp.config("rescriptls", {
 	},
 })
 
+-- Elixir
 vim.lsp.enable("expert")
 vim.lsp.config("expert", {
 	on_attach = on_attach,
 	capabilities = capabilities,
+	cmd = { "expert", "--stdio" },
+	root_markers = { "mix.exs", ".git" },
+	filetypes = { "elixir", "eelixir", "heex" },
 })
 
 -- TailwindCSS (default + gleam)

@@ -5,8 +5,9 @@ local o = vim.o
 o.syntax = "enable"
 o.background = "dark"
 o.termguicolors = true
-vim.cmd([[let g:gruvbox_material_background = 'hard']])
-vim.cmd("colorscheme gruvbox-material")
+-- vim.cmd([[let g:gruvbox_material_background = 'hard']])
+-- vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme evergarden-spring")
 
 -- Misc Visuals
 o.cursorline = true
