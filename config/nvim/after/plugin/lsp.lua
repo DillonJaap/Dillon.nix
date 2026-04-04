@@ -6,27 +6,27 @@ local wk = require("which-key")
 local function register_lsp_keys(bufnr)
 	local mappings = {
 		-- Diagnostics
-		{ "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-		{ "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
-		{ "<leader>e", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-		{ "<leader>lq", vim.diagnostic.setloclist, desc = "Send to Loclist" },
+		{ "[d",          vim.diagnostic.goto_prev,                  desc = "Prev Diagnostic" },
+		{ "]d",          vim.diagnostic.goto_next,                  desc = "Next Diagnostic" },
+		{ "<leader>e",   vim.diagnostic.open_float,                 desc = "Line Diagnostics" },
+		{ "<leader>lq",  vim.diagnostic.setloclist,                 desc = "Send to Loclist" },
 
 		-- LSP navigation
-		{ "gD", vim.lsp.buf.declaration, desc = "Go to Declaration" },
-		{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
-		{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Go to Implementation" },
-		{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "Go to References" },
-		{ "gT", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Go to Type Definition" },
+		{ "gD",          vim.lsp.buf.declaration,                   desc = "Go to Declaration" },
+		{ "gd",          "<cmd>Telescope lsp_definitions<cr>",      desc = "Go to Definition" },
+		{ "gi",          "<cmd>Telescope lsp_implementations<cr>",  desc = "Go to Implementation" },
+		{ "gr",          "<cmd>Telescope lsp_references<cr>",       desc = "Go to References" },
+		{ "gT",          "<cmd>Telescope lsp_type_definitions<cr>", desc = "Go to Type Definition" },
 
 		-- Actions
-		{ "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
-		{ "<leader>lh", vim.lsp.buf.signature_help, desc = "Signature Help" },
-		{ "<leader>ln", vim.lsp.buf.rename, desc = "Rename Symbol" },
-		{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
+		{ "K",           vim.lsp.buf.hover,                         desc = "Hover Documentation" },
+		{ "<leader>lh",  vim.lsp.buf.signature_help,                desc = "Signature Help" },
+		{ "<leader>ln",  vim.lsp.buf.rename,                        desc = "Rename Symbol" },
+		{ "<leader>la",  vim.lsp.buf.code_action,                   desc = "Code Action",            mode = { "n", "v" } },
 
 		-- Workspace
-		{ "<leader>lwa", vim.lsp.buf.add_workspace_folder, desc = "Add Workspace Folder" },
-		{ "<leader>lwr", vim.lsp.buf.remove_workspace_folder, desc = "Remove Workspace Folder" },
+		{ "<leader>lwa", vim.lsp.buf.add_workspace_folder,          desc = "Add Workspace Folder" },
+		{ "<leader>lwr", vim.lsp.buf.remove_workspace_folder,       desc = "Remove Workspace Folder" },
 		{
 			"<leader>lwl",
 			function()
@@ -36,13 +36,13 @@ local function register_lsp_keys(bufnr)
 		},
 
 		-- Calls
-		{ "<leader>lC", vim.lsp.buf.incoming_calls, desc = "Incoming Calls" },
-		{ "<leader>lO", vim.lsp.buf.outgoing_calls, desc = "Outgoing Calls" },
+		{ "<leader>lC", vim.lsp.buf.incoming_calls,              desc = "Incoming Calls" },
+		{ "<leader>lO", vim.lsp.buf.outgoing_calls,              desc = "Outgoing Calls" },
 		{ "<leader>lc", "<cmd>Telescope lsp_incoming_calls<cr>", desc = "Incoming Calls (Telescope)" },
 		{ "<leader>lo", "<cmd>Telescope lsp_outgoing_calls<cr>", desc = "Outgoing Calls (Telescope)" },
 
 		-- Group labels
-		{ "<leader>l", group = "LSP" },
+		{ "<leader>l",  group = "LSP" },
 		{ "<leader>lw", group = "Workspace" },
 	}
 
@@ -282,14 +282,14 @@ vim.lsp.config("tailwindcss", {
 			includeLanguages = { gleam = "html" },
 			experimental = {
 				classRegex = {
-					{ '\\w+\\.class\\("([^"]*)"\\)', '([^"]*)' },
-					{ "\\w+\\.class\\('([^']*)'\\)", "([^']*)" },
-					{ 'class\\("([^"]*)"\\)', '([^"]*)' },
-					{ "class\\('([^']*)'\\)", "([^']*)" },
+					{ '\\w+\\.class\\("([^"]*)"\\)',                    '([^"]*)' },
+					{ "\\w+\\.class\\('([^']*)'\\)",                    "([^']*)" },
+					{ 'class\\("([^"]*)"\\)',                           '([^"]*)' },
+					{ "class\\('([^']*)'\\)",                           "([^']*)" },
 					{ '\\w+\\.class\\([\\s\\n]*"([^"]*)"[\\s\\n,]*\\)', '([^"]*)' },
 					{ "\\w+\\.class\\([\\s\\n]*'([^']*)'[\\s\\n,]*\\)", "([^']*)" },
-					{ 'class\\([\\s\\n]*"([^"]*)"[\\s\\n,]*\\)', '([^"]*)' },
-					{ "class\\([\\s\\n]*'([^']*)'[\\s\\n,]*\\)", "([^']*)" },
+					{ 'class\\([\\s\\n]*"([^"]*)"[\\s\\n,]*\\)',        '([^"]*)' },
+					{ "class\\([\\s\\n]*'([^']*)'[\\s\\n,]*\\)",        "([^']*)" },
 				},
 			},
 		},
