@@ -70,6 +70,7 @@ end)
 -------------------------------------------------------------------------------
 
 -- Lua
+vim.lsp.enable("lua_ls")
 vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -85,6 +86,7 @@ vim.lsp.config("lua_ls", {
 })
 
 -- Go
+vim.lsp.enable("gopls")
 vim.lsp.config("gopls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -94,6 +96,7 @@ vim.lsp.config("gopls", {
 })
 
 -- SQL
+vim.lsp.enable("sqlls")
 vim.lsp.config("sqlls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -101,6 +104,7 @@ vim.lsp.config("sqlls", {
 })
 
 -- OCaml
+vim.lsp.enable("ocamllsp")
 vim.lsp.config("ocamllsp", {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -108,96 +112,84 @@ vim.lsp.config("ocamllsp", {
 })
 
 -- HTML
+vim.lsp.enable("html")
 vim.lsp.config("html", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "html", "templ" },
 })
 
--- Apex
-vim.lsp.config("apex_ls", {
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "apexcode", "apex" },
-})
-
--- Templ
--- vim.lsp.enable("templ")
--- vim.lsp.config("templ", {
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	filetypes = { "templ" },
--- })
 
 -- PHP
+vim.lsp.enable("intelephense")
 vim.lsp.config("intelephense", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Odin
+vim.lsp.enable("ols")
 vim.lsp.config("ols", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Nix
+vim.lsp.enable("nil_ls")
 vim.lsp.config("nil_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Terraform
+vim.lsp.enable("terraformls")
 vim.lsp.config("terraformls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Cypher
+vim.lsp.enable("cypher_ls")
 vim.lsp.config("cypher_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- Volar (Vue)
--- vim.lsp.enable("volar")
--- vim.lsp.config("volar", {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   cmd = { "vue-language-server", "--stdio" },
---   init_options = { vue = { hybridMode = false } },
---   filetypes = { "javascript", "typescript", "vue" },
--- })
-
 -- Gleam
+vim.lsp.enable("gleam")
 vim.lsp.config("gleam", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- YAML
+vim.lsp.enable("yamlls")
 vim.lsp.config("yamlls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Nushell
+vim.lsp.enable("nushell")
 vim.lsp.config("nushell", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- js/ts
+vim.lsp.enable("ts_ls")
 vim.lsp.config("ts_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable("eslint")
 vim.lsp.config("eslint", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- rescript
+vim.lsp.enable("rescriptls")
 vim.lsp.config("rescriptls", {
 	on_attach = on_attach,
 	settings = {
@@ -217,15 +209,21 @@ vim.lsp.config("rescriptls", {
 })
 
 -- Elixir
+vim.lsp.enable("expert")
 vim.lsp.config("expert", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "expert", "--stdio" },
 	root_markers = { "mix.exs", ".git" },
-	filetypes = { "elixir", "eelixir", "heex" },
+	filetypes = {
+		"elixir",
+		-- "eelixir",
+		"heex",
+	},
 })
 
 -- TailwindCSS (default + gleam)
+vim.lsp.enable("tailwindcss")
 vim.lsp.config("tailwindcss", {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -237,7 +235,7 @@ vim.lsp.config("tailwindcss", {
 		"django-html",
 		"htmldjango",
 		"edge",
-		"eelixir",
+		-- "eelixir",
 		"elixir",
 		"ejs",
 		"erb",
