@@ -55,7 +55,7 @@ in
       # ======================
 
       font_family     Iosevka Nerd Font Mono
-      font_size 14
+      font_size 11
 
       # ======================
       # CURSOR SETTINGS
@@ -111,6 +111,10 @@ in
       map alt+shift+tab next_tab
       map alt+c new_tab
       map alt+x close_tab
+
+      map alt+equal increase_font_size
+      map alt+minus decrease_font_size
+      map alt+0 restore_font_size
 
       # ======================
       # COLOR SCHEME (Evergarden Spring)
