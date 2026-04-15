@@ -68,7 +68,6 @@ def aws_deploy_login [aws_env = "devint"] {
 
 def upload_lambda [name: string, lambda_folder="./lambda", aws_profile="reactor_devint"] {
 	let remote_lamba = aws lambda list-functions --query "Functions.FunctionName" --output text --profile $aws_profile
-
 }
 
 def trim-pwd [] {
@@ -101,4 +100,82 @@ def bp [] {
 
 def gitcc [] {
   git rev-parse HEAD | pbcopy
+}
+
+# Add standard OCaml dev-tools to dune-project if they are missing
+def add-ocaml-dev-tools [] {
+    let wanted = [
+        "(ocaml-lsp-server :dev)"
+        "(merlin :dev)"
+        "(ocamlformat :dev)"
+    ]
+
+    let proj = open dune-project
+    let existing = ($proj | lines | each { str trim })
+    let to_add = ($wanted | where { |pkg|
+        not ($existing | any { |l| $l == $pkg })
+    })
+
+    if ($to_add | is-empty) {
+        print "All packages already present – nothing to add."
+        return
+    }
+
+    let lines = ($proj | lines)
+    let idx = (
+        $lines
+        | enumerate
+        | where { |it| $it.item | str trim | str starts-with "(depends" }
+        | get 0.index
+    )
+
+
+    let depends_line = ($lines | get $idx)
+    let trimmed = ($depends_line | str trim)
+    let new_deps = ($to_add | each { |p| $"  ($p)" } | str join "\n")
+
+    let new_file = [
+        ($lines | take $idx | str join "\n")
+        "(depends"
+        "  ocaml"
+        $new_deps
+        ")"
+        ($lines | skip ($idx + 1) | str join "\n")
+    ] | str join "\n"
+
+    print "Packages added to dune-project:"
+    for pkg in $to_add {
+        print $"  ($pkg)"
+    }
+}
+
+def --env ocaml_init [name: string] {
+  dune init project $name;
+  cd $name;
+
+  # Create .ocamlformat file
+    $"
+profile = janestreet
+margin = 80
+sequence-blank-line=preserve-one
+exp-grouping=preserve
+if-then-else=fit-or-vertical
+let-binding-spacing=sparse
+" | save .ocamlformat;
+
+  add-ocaml-dev-tools;
+  dune pkg lock
+  git init .
+
+    $"
+_build/
+.merlin
+.opam-switch/
+*.install
+*.dune-package
+.DS_Store
+" | save .gitignore;
+  git add .gitignore;
+  git add .;
+  git commit -am "initial commit";
 }
