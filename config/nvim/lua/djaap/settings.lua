@@ -2,7 +2,6 @@ local g = vim.g
 local o = vim.o
 
 -- Colorscheme
-o.syntax = "enable"
 o.background = "dark"
 o.termguicolors = true
 -- vim.cmd([[let g:gruvbox_material_background = 'hard']])
@@ -121,3 +120,17 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 -- other stuff
+
+-- Start treesitter highlighting automatically for any filetype that has an
+-- installed parser. vim.treesitter.language.get_lang() maps filetypes to
+-- parser names; pcall guards against filetypes with no parser installed.
+local ts_augroup = vim.api.nvim_create_augroup("ts_highlight", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = ts_augroup,
+	callback = function(ev)
+		local ft = vim.bo[ev.buf].filetype
+		if ft == "" then return end
+		local lang = vim.treesitter.language.get_lang(ft)
+		if lang and pcall(vim.treesitter.start, ev.buf, lang) then end
+	end,
+})
