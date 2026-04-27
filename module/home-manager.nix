@@ -80,6 +80,12 @@ in
       allow_remote_control yes
 
       # ======================
+      # SOCKET
+      # ======================
+      allow_remote_control yes
+      listen_on unix:${config.home.homeDirectory}/.kitty.sock
+
+      # ======================
       # MACOS OPTIONS
       # ======================
 
@@ -191,6 +197,7 @@ in
     neovim = {
       enable = true;
       defaultEditor = true;
+      package = pkgs-unstable.neovim-unwrapped;
     };
 
   };
