@@ -13,14 +13,16 @@ in
     XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
   };
 
-  # Symlink nushell config into the OS-appropriate directory.
-  # macOS defaults to ~/Library/Application Support/nushell;
-  # Linux uses ~/.config/nushell (via XDG).
   home.file = {
+    # Symlink nushell config into the OS-appropriate directory.
+    # macOS defaults to ~/Library/Application Support/nushell;
+    # Linux uses ~/.config/nushell (via XDG).
     "${nushellConfigDir}/config.nu".source = symLink "${repoPath}/config/nushell/config.nu";
     "${nushellConfigDir}/env.nu".source = symLink "${repoPath}/config/nushell/env.nu";
     "${nushellConfigDir}/git-completions.nu".source = symLink "${repoPath}/config/nushell/git-completions.nu";
     "${nushellConfigDir}/gh-completions.nu".source = symLink "${repoPath}/config/nushell/gh-completions.nu";
+    # neovide config
+    "${config.home.homeDirectory}/.config/neovide/config.toml".source = symLink "${repoPath}/config/neovide/config.toml";
   };
 
   home.packages = with pkgs; [
