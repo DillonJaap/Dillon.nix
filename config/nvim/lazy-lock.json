@@ -11,7 +11,7 @@
   "cyberdream.nvim": { "branch": "main", "commit": "a68ffa6af98bf1fc88f33a071c51a188ec85c725" },
   "dracula.nvim": { "branch": "main", "commit": "ae752c13e95fb7c5f58da4b5123cb804ea7568ee" },
   "evergarden": { "branch": "main", "commit": "ded46a3eaaab08ffd9ba206bd7eff9e93598d2e5" },
-  "fff.nvim": { "branch": "main", "commit": "eecb795a0e14082f4b0c66e6ad80d82da49632ad" },
+  "fff.nvim": { "branch": "main", "commit": "4b13a91aa57c5e9ed32ee381d9ee521800818370" },
   "gitsigns.nvim": { "branch": "main", "commit": "50c205548d8b037b7ff6378fca6d21146f0b6161" },
   "gruvbox-material": { "branch": "master", "commit": "790afe9dd085aa04eccd1da3626c5fa05c620e53" },
   "gruvbuddy.nvim": { "branch": "master", "commit": "3aa94b2fb061b13ccc118d21fad25d6b1ff3fc8b" },

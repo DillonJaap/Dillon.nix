@@ -35,3 +35,4 @@ $env.path ++= [
 ]
 
 $env.ANDROID_HOME = "~/Library/Android/sdk"
+$env.ANDROID_SDK_ROOT = "/home/dillon/Android/Sdk"
