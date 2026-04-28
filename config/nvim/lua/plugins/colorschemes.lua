@@ -9,11 +9,6 @@ return {
 	"tjdevries/gruvbuddy.nvim",
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
 		"everviolet/nvim",
 		name = "evergarden",
 		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
@@ -24,6 +19,7 @@ return {
 			},
 			editor = {
 				transparent_background = false,
+				override_terminal = true,
 				sign = { color = "none" },
 				float = {
 					color = "mantle",

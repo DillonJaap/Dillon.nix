@@ -19,19 +19,22 @@
 
 
 $env.path ++= [
+  "/nix/var/nix/profiles/default/bin"
+  "~/.nix-profile/bin"
   "/opt/homebrew/bin"
   "/Users/DJaap/Library/Python/3.9/bin"
   "/Users/DJaap/.config/herd-lite/bin"
+  "/Users/DJaap/Library/Application Support/JetBrains/Toolbox/scripts"
   "/run/current-system/sw/bin"
   "~/go/bin"
   "~/bin"
   "~/.scripts"
-  "~/.opam/default/bin/dune"
-	"~/.opam/default/bin/"
+  "~/.local/bin"
+  "~/.opam/default/bin"
   "~/Library/Android/sdk/cmdline-tools/latest/bin"
   "~/Library/Android/sdk/platform-tools"
   "~/Library/Android/sdk/emulator"
-  "/~/.local/bin"
+  "~/development/flutter/bin"
 ]
 
 $env.ANDROID_HOME = "~/Library/Android/sdk"

@@ -93,8 +93,21 @@ if vim.g.neovide then
 end
 
 -- term settings
-if vim.fn.executable("nu") == 1 then
-	vim.o.shell = "nu"
+local nu_paths = {
+	vim.fn.expand("~/.nix-profile/bin/nu"),
+	"/nix/var/nix/profiles/default/bin/nu",
+	"/opt/homebrew/bin/nu",
+	"/usr/local/bin/nu",
+}
+local nu_shell = nil
+for _, p in ipairs(nu_paths) do
+	if vim.fn.executable(p) == 1 then
+		nu_shell = p
+		break
+	end
+end
+if nu_shell then
+	vim.o.shell = nu_shell
 else
 	vim.o.shell = "/bin/bash"
 end

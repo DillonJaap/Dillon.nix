@@ -32,7 +32,7 @@ in
     erlang elixir pkgs-unstable.gleam
 
     # cli tools
-    fzf eza ripgrep skate gh
+    fzf eza ripgrep skate gh tree-sitter
 
     # fonts
     nerd-fonts.iosevka
