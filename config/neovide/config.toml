@@ -1,1 +1,2 @@
 neovim-bin = "/home/dillon/.nix-profile/bin/nvim"
+chdir = "home/dillon/code"

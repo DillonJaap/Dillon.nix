@@ -160,7 +160,9 @@ margin = 80
 sequence-blank-line=preserve-one
 exp-grouping=preserve
 if-then-else=fit-or-vertical
-let-binding-spacing=sparse
+break-before-in=auto
+indicate-multiline-delimiters=closing-on-separate-line
+#let-binding-spacing=sparse
 " | save .ocamlformat;
 
   add-ocaml-dev-tools;
