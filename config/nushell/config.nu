@@ -169,6 +169,7 @@ indicate-multiline-delimiters=closing-on-separate-line
   dune pkg lock
   git init .
 
+  # Create git ignore
     $"
 _build/
 .merlin
@@ -177,6 +178,8 @@ _build/
 *.dune-package
 .DS_Store
 " | save .gitignore;
+
+  # add git ignore and create initial commit
   git add .gitignore;
   git add .;
   git commit -am "initial commit";

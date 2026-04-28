@@ -6,7 +6,7 @@ return {
 		build = ':TSUpdate',
 		config = function()
 			require("nvim-treesitter").setup({
-				ensure_installed = { "go", "lua", "bash", "javascript", "gleam" },
+				ensure_installed = { "go", "lua", "bash", "javascript", "gleam", "tsx" },
 			})
 		end,
 	},
