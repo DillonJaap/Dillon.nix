@@ -57,7 +57,7 @@ in
       # ======================
 
       font_family     Iosevka Nerd Font Mono
-      font_size 11
+      font_size 12
 
       # ======================
       # CURSOR SETTINGS
