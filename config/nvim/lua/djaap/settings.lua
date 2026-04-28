@@ -87,6 +87,11 @@ vim.filetype.add({
 	},
 })
 
+-- GUI font (neovide)
+if vim.g.neovide then
+	o.guifont = "Iosevka Nerd Font Mono:h18"
+end
+
 -- term settings
 if vim.fn.executable("nu") == 1 then
 	vim.o.shell = "nu"
@@ -129,8 +134,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = ts_augroup,
 	callback = function(ev)
 		local ft = vim.bo[ev.buf].filetype
-		if ft == "" then return end
+		if ft == "" then
+			return
+		end
 		local lang = vim.treesitter.language.get_lang(ft)
-		if lang and pcall(vim.treesitter.start, ev.buf, lang) then end
+		if lang and pcall(vim.treesitter.start, ev.buf, lang) then
+		end
 	end,
 })

@@ -33,6 +33,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 export PATH=$PATH":$HOME/.opam/default/bin/dune"
 export PATH="/Users/DJaap/.local/bin:$PATH"
+export PATH="/Users/DJaap/.nix-profile/bin:$PATH"
 
 # Shell Prompt
 trimPWD()

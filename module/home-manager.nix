@@ -37,6 +37,9 @@ in
     # fonts
     nerd-fonts.iosevka
 
+    # editors
+    pkgs-unstable.neovide
+
     # other
     jdk rebar3
   ];
