@@ -1,2 +1,7 @@
-neovim-bin = "/home/dillon/.nix-profile/bin/nvim"
-chdir = "home/dillon/code"
+neovim-bin = "/Users/DJaap/.nix-profile/bin/nvim"
+chdir = "/Users/DJaap/code/gitlab.com/ciorg/church/Reactor/"
+
+# Font settings - matching kitty
+[font]
+normal = ["Iosevka Nerd Font Mono"]
+size = 14.0

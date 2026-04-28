@@ -2,11 +2,12 @@ return {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		lazy = false,
 		build = ':TSUpdate',
 		config = function()
 			require("nvim-treesitter").setup({
-				ensure_installed = { "go", "lua", "bash", "javascript", "gleam", "tsx" },
+				ensure_installed = { "go", "lua", "bash", "javascript", "gleam", "tsx", "markdown", "markdown_inline" },
 			})
 		end,
 	},

@@ -87,9 +87,27 @@ vim.filetype.add({
 	},
 })
 
+-- GUI font (neovide)
+if vim.g.neovide then
+	o.guifont = "Iosevka Nerd Font Mono:h18"
+end
+
 -- term settings
-if vim.fn.executable("nu") == 1 then
-	vim.o.shell = "nu"
+local nu_paths = {
+	vim.fn.expand("~/.nix-profile/bin/nu"),
+	"/nix/var/nix/profiles/default/bin/nu",
+	"/opt/homebrew/bin/nu",
+	"/usr/local/bin/nu",
+}
+local nu_shell = nil
+for _, p in ipairs(nu_paths) do
+	if vim.fn.executable(p) == 1 then
+		nu_shell = p
+		break
+	end
+end
+if nu_shell then
+	vim.o.shell = nu_shell
 else
 	vim.o.shell = "/bin/bash"
 end
@@ -129,8 +147,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = ts_augroup,
 	callback = function(ev)
 		local ft = vim.bo[ev.buf].filetype
-		if ft == "" then return end
+		if ft == "" then
+			return
+		end
 		local lang = vim.treesitter.language.get_lang(ft)
-		if lang and pcall(vim.treesitter.start, ev.buf, lang) then end
+		if lang and pcall(vim.treesitter.start, ev.buf, lang) then
+		end
 	end,
 })
