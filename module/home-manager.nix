@@ -5,6 +5,22 @@ let
   nushellConfigDir = if isDarwin
     then "Library/Application Support/nushell"
     else ".config/nushell";
+
+  # Wrap a package's binaries with nixGL on Linux so nix-built GL apps can
+  # use the host system's GPU drivers (needed on non-NixOS distros).
+  nixGLWrap = pkg:
+    if isDarwin
+    then pkg
+    else pkgs.runCommand "${pkg.pname or pkg.name}-nixgl" {} ''
+      mkdir -p $out/bin
+      for f in ${pkg}/bin/*; do
+        name=$(basename "$f")
+        printf '%s\n' '#!${pkgs.bash}/bin/bash' \
+          'exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL '"$f"' "$@"' \
+          > "$out/bin/$name"
+        chmod +x "$out/bin/$name"
+      done
+    '';
 in
 {
   home.stateVersion = "25.11";
@@ -28,10 +44,10 @@ in
   home.packages = with pkgs; [
     home-manager
     # languages / package managers
-    go ocaml opam odin 
+    go ocaml opam odin cargo
     # cargo 
     nushell 
-    erlang elixir pkgs-unstable.gleam
+    erlang elixir gleam
 
     # cli tools
     fzf eza ripgrep skate gh tree-sitter
@@ -40,7 +56,7 @@ in
     nerd-fonts.iosevka
 
     # editors
-    # pkgs-unstable.neovide
+    (nixGLWrap pkgs-unstable.neovide)
 
     # other
     jdk rebar3
@@ -200,12 +216,10 @@ in
         aliases = { co = "pr checkout"; pv = "pr view"; };
       };
     };
-
     neovim = {
       enable = true;
       defaultEditor = true;
       package = pkgs-unstable.neovim-unwrapped;
     };
-
-  };
+  }
 }
