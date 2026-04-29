@@ -28,7 +28,9 @@ in
   home.packages = with pkgs; [
     home-manager
     # languages / package managers
-    go ocaml opam odin cargo nushell 
+    go ocaml opam odin 
+    # cargo 
+    nushell 
     erlang elixir pkgs-unstable.gleam
 
     # cli tools
@@ -38,7 +40,7 @@ in
     nerd-fonts.iosevka
 
     # editors
-    pkgs-unstable.neovide
+    # pkgs-unstable.neovide
 
     # other
     jdk rebar3

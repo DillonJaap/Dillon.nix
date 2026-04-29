@@ -1,5 +1,7 @@
-neovim-bin = "/Users/DJaap/.nix-profile/bin/nvim"
-chdir = "/Users/DJaap/code/gitlab.com/ciorg/church/Reactor/"
+# neovim-bin = "/Users/DJaap/.nix-profile/bin/nvim"
+# chdir = "/Users/DJaap/code/gitlab.com/ciorg/church/Reactor/"
+neovim-bin = "/home/dillon/.nix-profile/bin/nvim"
+chdir = "/home/dillon/code/"
 
 # Font settings - matching kitty
 [font]
