@@ -221,5 +221,5 @@ in
       defaultEditor = true;
       package = pkgs-unstable.neovim-unwrapped;
     };
-  }
+  };
 }

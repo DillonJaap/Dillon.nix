@@ -49,7 +49,7 @@ o.foldenable = true
 
 -- mouse
 if vim.fn.has("mouse") == 1 then
-	o.mouse = "a"
+  o.mouse = "a"
 end
 
 -- Finding files
@@ -78,38 +78,38 @@ o.conceallevel = 2
 Session_dir = "~/Sessions"
 
 vim.filetype.add({
-	extension = {
-		cls = "apex",
-		apex = "apex",
-		trigger = "apex",
-		soql = "soql",
-		sosl = "sosl",
-	},
+  extension = {
+    cls = "apex",
+    apex = "apex",
+    trigger = "apex",
+    soql = "soql",
+    sosl = "sosl",
+  },
 })
 
 -- GUI font (neovide)
 if vim.g.neovide then
-	o.guifont = "Iosevka Nerd Font Mono:h18"
+  o.guifont = "Iosevka Nerd Font Mono:h12"
 end
 
 -- term settings
 local nu_paths = {
-	vim.fn.expand("~/.nix-profile/bin/nu"),
-	"/nix/var/nix/profiles/default/bin/nu",
-	"/opt/homebrew/bin/nu",
-	"/usr/local/bin/nu",
+  vim.fn.expand("~/.nix-profile/bin/nu"),
+  "/nix/var/nix/profiles/default/bin/nu",
+  "/opt/homebrew/bin/nu",
+  "/usr/local/bin/nu",
 }
 local nu_shell = nil
 for _, p in ipairs(nu_paths) do
-	if vim.fn.executable(p) == 1 then
-		nu_shell = p
-		break
-	end
+  if vim.fn.executable(p) == 1 then
+    nu_shell = p
+    break
+  end
 end
 if nu_shell then
-	vim.o.shell = nu_shell
+  vim.o.shell = nu_shell
 else
-	vim.o.shell = "/bin/bash"
+  vim.o.shell = "/bin/bash"
 end
 
 --------------------------------------------------------------------------------
@@ -117,24 +117,24 @@ end
 --------------------------------------------------------------------------------
 local hs_augroup = vim.api.nvim_create_augroup("hs_cmds", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = ".*\\.hs",
-	group = hs_augroup,
-	callback = function()
-		o.textwidth = 100
-		o.expandtab = true
-		o.tabstop = 4
-		o.shiftwidth = 4
-		o.softtabstop = -1 -- If negative, shiftwidth value is used
-	end,
+  pattern = ".*\\.hs",
+  group = hs_augroup,
+  callback = function()
+    o.textwidth = 100
+    o.expandtab = true
+    o.tabstop = 4
+    o.shiftwidth = 4
+    o.softtabstop = -1 -- If negative, shiftwidth value is used
+  end,
 })
 
 local term_augroup = vim.api.nvim_create_augroup("term_cmds", { clear = true })
 vim.api.nvim_create_autocmd("TermOpen", {
-	group = term_augroup,
-	callback = function()
-		vim.opt_local.relativenumber = false
-		vim.opt_local.number = false
-	end,
+  group = term_augroup,
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+  end,
 })
 
 -- other stuff

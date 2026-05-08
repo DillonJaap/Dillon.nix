@@ -54,6 +54,12 @@ return {
 			end
 
 			require("ufo").setup({
+				provider_selector = function(_, filetype, _)
+					if filetype == "gleam" then
+						return { "treesitter", "indent" }
+					end
+					return { "lsp", "indent" }
+				end,
 				fold_virt_text_handler = handler,
 			})
 		end,

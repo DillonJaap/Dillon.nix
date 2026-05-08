@@ -6,4 +6,4 @@ chdir = "/home/dillon/code/"
 # Font settings - matching kitty
 [font]
 normal = ["Iosevka Nerd Font Mono"]
-size = 14.0
+size = 12.0

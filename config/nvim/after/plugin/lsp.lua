@@ -1,5 +1,9 @@
 local wk = require("which-key")
 
+-- nvim 0.12 document_color assert fires when client detaches while state still
+-- holds the id. Disable until upstream fix.
+vim.lsp.document_color.enable(false)
+
 -- ---------------------------------------------------------------------------
 -- Helper: LSP keymaps
 -- ---------------------------------------------------------------------------
