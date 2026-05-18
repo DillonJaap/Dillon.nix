@@ -149,6 +149,24 @@ def add-ocaml-dev-tools [] {
     }
 }
 
+# Remove stale Android Studio lock files that prevent it from launching
+def android-studio-unlock [] {
+  let lock_files = [
+    ($env.HOME | path join ".var/app/com.google.AndroidStudio/config/Google/AndroidStudio2025.3.3/.lock")
+  ]
+
+  for lock in $lock_files {
+    if ($lock | path exists) {
+      rm $lock
+      print $"Removed: ($lock)"
+    } else {
+      print $"Not found: ($lock)"
+    }
+  }
+
+  print "Done. Run: flatpak run com.google.AndroidStudio"
+}
+
 def --env ocaml_init [name: string] {
   dune init project $name;
   cd $name;

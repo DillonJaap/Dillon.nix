@@ -10,14 +10,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = inputs@{ self, home-manager, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, home-manager, nixpkgs, nixpkgs-unstable, nixgl, ... }:
 let
   mkHome = { system, username, homeDirectory, repoPath ? "${homeDirectory}/Dillon.nix" }:
+    let
+      isDarwin = nixpkgs.lib.strings.hasSuffix "darwin" system;
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = if isDarwin then [] else [ nixgl.overlay ];
+        config.allowUnfree = true;
+      };
+    in
     home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      inherit pkgs;
       extraSpecialArgs = {
         inherit username repoPath;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};

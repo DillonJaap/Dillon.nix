@@ -99,6 +99,14 @@ in
       map cmd+, no_op
 
       # ======================
+      # scroll / animation
+      # ======================
+      pixel_scroll yes
+      momentum_scroll 0.96
+      cursor_trail 50
+
+
+      # ======================
       # CUSTOM SHORTCUTS
       # ======================
 
