@@ -90,6 +90,7 @@ vim.filetype.add({
 -- GUI font (neovide)
 if vim.g.neovide then
 	o.guifont = "Iosevka Nerd Font Mono:h18"
+	vim.env.PATH = "/opt/homebrew/bin:" .. vim.env.PATH
 end
 
 -- term settings
