@@ -251,8 +251,13 @@ wk.add({
 -- 	{ "<leader>Gt", ":GrapplePopup tags<CR>", desc = "Popup menu" },
 -- })
 
---{ 'zM',        require('ufo').openAllFolds,  desc = 'Open all folds' },
---{ 'zR',        require('ufo').closeAllFolds, desc = 'Close all folds' },
+-- Plugin - Folds (ufo)
+wk.add({
+	{ "zR", function() require("ufo").openAllFolds() end,         desc = "Open all folds" },
+	{ "zM", function() require("ufo").closeAllFolds() end,        desc = "Close all folds" },
+	{ "zr", function() require("ufo").openFoldsExceptKinds() end, desc = "Open folds by one level" },
+	{ "zm", function() require("ufo").closeFoldsWith() end,       desc = "Close folds by one level" },
+})
 
 -- add groups
 wk.add({
