@@ -2,3 +2,4 @@
 
 (list) @fold
 (list_pattern) @fold
+(case_clause) @fold
