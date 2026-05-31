@@ -54,7 +54,7 @@ in
       mac-aarch64-personal = mkHome {
         system = "aarch64-darwin";
         username = "DJaap";
-        homeDirectory = "/Users/DJaap";
+        homeDirectory = "/Users/djaap";
       };
       linux-x86_64 = mkHome {
         system = "x86_64-linux";
