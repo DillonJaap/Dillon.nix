@@ -51,6 +51,11 @@ in
         username = "DJaap";
         homeDirectory = "/Users/DJaap";
       };
+      mac-aarch64-personal = mkHome {
+        system = "aarch64-darwin";
+        username = "DJaap";
+        homeDirectory = "/Users/DJaap";
+      };
       linux-x86_64 = mkHome {
         system = "x86_64-linux";
         username = "dillon";
