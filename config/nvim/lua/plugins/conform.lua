@@ -2,12 +2,15 @@ return {
 	"stevearc/conform.nvim",
 	opts = {},
 	config = function()
-		require("conform").setup({
+		local conform = require("conform")
+		local formatOpts = { timeout_ms = 500, lsp_format = "fallback" }
+
+		conform.setup({
 			format_on_save = function(bufnr)
 				if vim.bo[bufnr].filetype == "rescript" then
 					return nil
 				end
-				return { timeout_ms = 500, lsp_format = "fallback" }
+				return formatOpts
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -23,6 +26,17 @@ return {
 				ocaml = { "ocamlformat" },
 				json = { "prettier" },
 			},
+		})
+
+		local rescriptFormatOnSave = vim.api.nvim_create_augroup("rescript_format_on_save", { clear = true })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = rescriptFormatOnSave,
+			pattern = { "*.res", "*.resi" },
+			callback = function(args)
+				pcall(vim.cmd, "silent! mkview!")
+				conform.format(vim.tbl_extend("force", formatOpts, { bufnr = args.buf, async = false }))
+				pcall(vim.cmd, "silent! loadview")
+			end,
 		})
 	end,
 }

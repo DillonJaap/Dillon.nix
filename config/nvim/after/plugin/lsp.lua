@@ -63,6 +63,9 @@ end
 -- ---------------------------------------------------------------------------
 local function on_attach(client, bufnr)
 	register_lsp_keys(bufnr)
+	if client.name == "rescriptls" then
+		return
+	end
 	if client:supports_method("textDocument/inlayHint") then
 		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	end
