@@ -57,6 +57,11 @@ in
       target = "../.scripts/";
       recursive = true;
     };
+    agents = {
+      source = symLink "${repoPath}/config/agents";
+      target = "../.agents/";
+      recursive = true;
+    };
 
     "kitty/kitty.conf".text = ''
       # ======================
