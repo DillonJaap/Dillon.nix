@@ -105,7 +105,7 @@ vim.lsp.config("gopls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
-		gopls = { buildFlags = { "-tags=integration,e2e" } },
+		gopls = { buildFlags = { "-tags=integration,e2e,performancetesting" } },
 	},
 })
 
