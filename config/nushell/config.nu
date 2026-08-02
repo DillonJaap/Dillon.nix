@@ -174,13 +174,14 @@ def --env ocaml_init [name: string] {
   # Create .ocamlformat file
     $"
 profile = janestreet
-margin = 80
+margin = 100
 sequence-blank-line=preserve-one
 exp-grouping=preserve
 if-then-else=fit-or-vertical
-break-before-in=auto
+break-before-in=fit-or-vertical
 indicate-multiline-delimiters=closing-on-separate-line
 #let-binding-spacing=sparse
+
 " | save .ocamlformat;
 
   add-ocaml-dev-tools;
