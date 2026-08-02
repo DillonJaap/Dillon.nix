@@ -48,9 +48,18 @@ in
     nvim = {
       source = symLink "${repoPath}/config/nvim";
     };
+    opencode = {
+      source = symLink "${repoPath}/config/opencode";
+      recursive = true;
+    };
     scripts = {
       source = symLink "${repoPath}/config/scripts";
       target = "../.scripts/";
+      recursive = true;
+    };
+    agents = {
+      source = symLink "${repoPath}/config/agents";
+      target = "../.agents/";
       recursive = true;
     };
 

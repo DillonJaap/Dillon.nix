@@ -2,7 +2,7 @@ local ls = require("luasnip")
 local collection = require("luasnip.session.snippet_collection")
 --local types = require 'luasnip.util.types'
 
-local s = ls.s -- snippet creator
+local s = ls.s --' creator
 local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
@@ -25,7 +25,7 @@ local function get_scope_tree(node)
 	return scopes
 end
 
--- Clear go snippets
+-- Clear go's
 collection.clear_snippets("go")
 
 -- Repeat a node, but transform the text with the transform_func parameter
@@ -153,7 +153,7 @@ local extractCapitalLetters = function(str)
 end
 
 -------------------------------------------------------------------------------
--- snippets
+--'s
 -------------------------------------------------------------------------------
 ls.add_snippets("go", {
 	s(
@@ -220,7 +220,7 @@ ls.add_snippets("go", {
 	-- CharaChorder snippets
 	-------------------------------------------------------------------------------
 	s(
-		{ trig = "function snippet", name = "function snip", snippetType = "autosnippet" },
+		{ trig = "function'", name = "function snip", snippetType = "autosnippet" },
 		fmt(
 			[[
 			func {name}({parameters}) {return_}{{
@@ -238,7 +238,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "method snippet", name = "method", snippetType = "autosnippet" },
+		{ trig = "method'", name = "method", snippetType = "autosnippet" },
 		fmt(
 			[[
 			func ({} {}) {}({}) {}{{
@@ -258,7 +258,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "for snippet", name = "for", snippetType = "autosnippet" },
+		{ trig = "for'", name = "for", snippetType = "autosnippet" },
 		fmt(
 			[[
 			for {iter}; {cond}; {update} {{
@@ -275,7 +275,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "while snippet", name = "while", snippetType = "autosnippet" },
+		{ trig = "while'", name = "while", snippetType = "autosnippet" },
 		fmt(
 			[[
 			for {cond} {{
@@ -290,7 +290,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "range snippet", name = "for range", snippetType = "autosnippet" },
+		{ trig = "range'", name = "for range", snippetType = "autosnippet" },
 		fmt(
 			[[
 			for {key}, {value} := range {var} {{
@@ -307,7 +307,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "if snippet", name = "if", snippetType = "autosnippet" },
+		{ trig = "if'", name = "if", snippetType = "autosnippet" },
 		fmt(
 			[[
 			if {cond} {{
@@ -321,7 +321,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "else if snippet", name = "else if", snippetType = "autosnippet" },
+		{ trig = "else if'", name = "else if", snippetType = "autosnippet" },
 		fmt(
 			[[
 			else if {} {{
@@ -335,7 +335,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "else snippet", name = "else", snippetType = "autosnippet" },
+		{ trig = "else'", name = "else", snippetType = "autosnippet" },
 		fmt(
 			[[
 			else {{
@@ -367,7 +367,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "struct snippet", name = "struct", snippetType = "autosnippet" },
+		{ trig = "struct'", name = "struct", snippetType = "autosnippet" },
 		fmt(
 			[[
 			type {} struct {{
@@ -383,7 +383,7 @@ ls.add_snippets("go", {
 		)
 	),
 	s(
-		{ trig = "interface snippet", name = "interface", snippetType = "autosnippet" },
+		{ trig = "interface'", name = "interface", snippetType = "autosnippet" },
 		fmt(
 			[[
 			type {} interface {{
