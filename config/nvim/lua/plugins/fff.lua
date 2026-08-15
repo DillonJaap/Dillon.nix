@@ -1,20 +1,26 @@
 return {
 	"dmtrKovalenko/fff.nvim",
+	version = "*",
+	enabled = true,
 	build = function()
-		-- this will download prebuild binary or try to use existing rustup toolchain to build from source
-		-- (if you are using lazy you can use gb for rebuilding a plugin if needed)
-		require("fff.download").download_or_build_binary()
+		-- Skip the blocking download/build when the binary already exists.
+		-- fff.download_or_build_binary forces redownload (opts.force=true)
+		-- and parks the editor for up to 2 min via vim.wait on every Lazy
+		-- update of fff, which looks like a UI freeze. Skip when binary present;
+		-- run :Lazy build fff.nvim manually to force-refresh.
+		local dl = require("fff.download")
+		if vim.fn.filereadable(dl.get_binary_path()) == 1 then return end
+		dl.download_or_build_binary()
 	end,
 	-- if you are using nixos
 	-- build = "nix run .#release",
 	opts = { -- (optional)
 		debug = {
-			enabled = true, -- we expect your collaboration at least during the beta
-			show_scores = true, -- to help us optimize the scoring system, feel free to share your scores!
+			enabled = false,
+			show_scores = false,
 		},
 	},
-	-- No need to lazy-load with lazy.nvim.
-	-- This plugin initializes itself lazily.
+	-- Load during startup.
 	lazy = false,
 	keys = {
 		-- 	{

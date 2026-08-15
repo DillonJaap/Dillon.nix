@@ -25,6 +25,15 @@ end, function()
 	vim.cmd([[:set norelativenumber]])
 end)
 
+local fff_find_files = function()
+	require("fff").find_files()
+end
+
+local fff_live_grep = function(opts)
+	opts = type(opts) == "table" and opts or {}
+	require("fff").live_grep(opts)
+end
+
 -------------------------------------------------------------------------------
 -- Mappings (whick-key)
 -------------------------------------------------------------------------------
@@ -34,22 +43,18 @@ wk.add({
 	-- { "<C-f>", ":Telescope git_files<cr>", desc = "Find files" },
 	{
 		"<C-f>",
-		function()
-			require("fff").find_files()
-		end,
+		fff_find_files,
 		desc = "FFFind files",
 	},
 	{
 		"<leader>fl",
-		function()
-			require("fff").live_grep()
-		end,
+		fff_live_grep,
 		desc = "Live grep",
 	},
 	{
 		"fz",
 		function()
-			require("fff").live_grep({
+			fff_live_grep({
 				grep = { modes = { "fuzzy", "plain" } },
 			})
 		end,
@@ -58,7 +63,7 @@ wk.add({
 	{
 		"<leader>fw",
 		function()
-			require("fff").live_grep({ query = vim.fn.expand("<cword>") })
+			fff_live_grep({ query = vim.fn.expand("<cword>") })
 		end,
 		desc = "Find files",
 	},
