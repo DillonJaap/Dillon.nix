@@ -46,6 +46,7 @@ o.undoreload = 10000
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
+o.foldcolumn = "auto"
 
 -- mouse
 if vim.fn.has("mouse") == 1 then

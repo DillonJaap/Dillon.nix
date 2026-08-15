@@ -109,9 +109,9 @@ vim.lsp.config("gopls", {
 	},
 })
 
--- SQL
-vim.lsp.enable("sqlls")
-vim.lsp.config("sqlls", {
+-- SQL (sqls: Go server, supports MySQL/PostgreSQL/SQLite/MSSQL)
+vim.lsp.enable("sqls")
+vim.lsp.config("sqls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "sql", "mysql", "sql.tmpl" },
