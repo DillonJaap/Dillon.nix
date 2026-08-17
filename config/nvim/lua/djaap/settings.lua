@@ -36,6 +36,9 @@ o.textwidth = 120
 -- Buffers
 o.hidden = true
 
+-- Per-project config files (.nvim.lua), trust with :trust
+o.exrc = true
+
 -- Persistent Undo
 o.undofile = true
 vim.cmd("set undodir=$HOME/.vim/undo")
