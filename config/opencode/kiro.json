@@ -1,0 +1,9 @@
+{
+  "auto_sync_kiro_cli": true,
+  "account_selection_strategy": "sticky",
+  "default_region": "us-east-1",
+  "idc_start_url": "https://compassion.awsapps.com/start",
+  "idc_region": "us-east-1",
+  "usage_tracking_enabled": true,
+  "auto_effort_mapping": true
+}

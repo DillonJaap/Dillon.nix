@@ -40,6 +40,8 @@ $env.config = {
 }
 
 
+source ~/.config/nushell/mise.nu
+
 # load opam env
 if (which opam | is-not-empty) {
 	opam env --shell=powershell | parse "$env:{key} = '{val}'" | transpose -rd | load-env

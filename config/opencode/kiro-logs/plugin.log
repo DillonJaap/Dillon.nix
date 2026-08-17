@@ -1,0 +1,326 @@
+[2026-08-04T16:51:34.416Z] INFO: Bootstrap: writing placeholder auth entry for provider "kiro" 
+[2026-08-04T16:51:34.417Z] INFO: Bootstrap: auth.json updated — loader will run on next request 
+[2026-08-04T16:51:35.744Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:51:35.745Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:51:36.329Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:51:42.510Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:51:42.510Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:51:42.867Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:51:43.290Z] INFO: Kiro usage (DJaap@us.ci.org): 7.12/1000 (1%) 
+[2026-08-04T16:51:58.569Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:51:58.569Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:51:58.922Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:51:59.210Z] INFO: Kiro usage (DJaap@us.ci.org): 7.12/1000 (1%) 
+[2026-08-04T16:52:07.199Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:52:07.199Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:52:07.543Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:52:07.910Z] INFO: Kiro usage (DJaap@us.ci.org): 7.19/1000 (1%) 
+[2026-08-04T16:52:53.156Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:52:53.156Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:52:53.493Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:52:53.903Z] INFO: Kiro usage (DJaap@us.ci.org): 7.29/1000 (1%) 
+[2026-08-04T16:58:56.310Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-04T16:58:56.310Z] INFO: Kiro CLI sync: start 
+[2026-08-04T16:58:56.657Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-04T16:58:56.965Z] INFO: Kiro usage (DJaap@us.ci.org): 12.36/1000 (1%) 
+[2026-08-04T20:01:25.882Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-04T20:01:26.211Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-04T20:01:26.217Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T14:57:13.694Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T14:57:13.694Z] INFO: Kiro CLI sync: start 
+[2026-08-05T14:57:14.126Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T14:57:14.458Z] INFO: Kiro usage (DJaap@us.ci.org): 13.97/1000 (1%) 
+[2026-08-05T16:48:46.682Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T16:48:47.058Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T16:48:47.062Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T16:50:09.091Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T16:50:09.091Z] INFO: Kiro CLI sync: start 
+[2026-08-05T16:50:09.686Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T16:50:10.059Z] INFO: Kiro usage (DJaap@us.ci.org): 15.12/1000 (2%) 
+[2026-08-05T17:48:18.259Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:18.605Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:32.696Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T17:48:32.697Z] INFO: Kiro CLI sync: start 
+[2026-08-05T17:48:33.009Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T17:48:33.248Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:33.482Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:33.482Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:33.482Z] INFO: Kiro usage (DJaap@us.ci.org): 18.37/1000 (2%) 
+[2026-08-05T17:48:39.411Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:48:39.569Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:01.277Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:01.500Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:28.760Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:28.959Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:29.195Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:29.386Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T17:49:36.992Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T17:49:36.992Z] INFO: Kiro CLI sync: start 
+[2026-08-05T17:49:37.466Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T17:49:37.791Z] INFO: Kiro usage (DJaap@us.ci.org): 18.54/1000 (2%) 
+[2026-08-05T18:25:16.459Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T18:25:16.459Z] INFO: Kiro CLI sync: start 
+[2026-08-05T18:25:16.790Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T18:25:17.128Z] INFO: Kiro usage (DJaap@us.ci.org): 22.04/1000 (2%) 
+[2026-08-05T18:48:01.933Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:48:02.276Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:48:28.194Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:48:28.355Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:50:22.613Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:50:22.717Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T18:50:22.722Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:50:22.957Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:50:23.063Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T18:50:23.065Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T18:52:38.840Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T18:52:38.841Z] INFO: Kiro CLI sync: start 
+[2026-08-05T18:52:39.285Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T18:52:39.618Z] INFO: Kiro usage (DJaap@us.ci.org): 24.33/1000 (2%) 
+[2026-08-05T19:48:27.662Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:48:27.847Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:49:06.427Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:49:06.584Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:50:35.486Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T19:50:35.486Z] INFO: Kiro CLI sync: start 
+[2026-08-05T19:50:35.851Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T19:50:36.114Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:50:36.357Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:50:36.358Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:50:36.366Z] INFO: Kiro usage (DJaap@us.ci.org): 29.89/1000 (3%) 
+[2026-08-05T19:51:11.468Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:51:11.700Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:51:12.027Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:51:12.209Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T19:51:47.838Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T19:51:47.838Z] INFO: Kiro CLI sync: start 
+[2026-08-05T19:51:48.401Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T19:51:48.731Z] INFO: Kiro usage (DJaap@us.ci.org): 30.13/1000 (3%) 
+[2026-08-05T20:52:47.934Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T20:52:48.178Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T20:52:48.180Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T20:53:14.903Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T20:53:14.903Z] INFO: Kiro CLI sync: start 
+[2026-08-05T20:53:15.390Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T20:53:15.709Z] INFO: Kiro usage (DJaap@us.ci.org): 46.78/1000 (5%) 
+[2026-08-05T22:04:39.306Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T22:04:39.630Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T22:04:39.635Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T22:05:10.770Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T22:05:10.771Z] INFO: Kiro CLI sync: start 
+[2026-08-05T22:05:11.258Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T22:05:11.582Z] INFO: Kiro usage (DJaap@us.ci.org): 50.11/1000 (5%) 
+[2026-08-05T23:12:05.084Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T23:12:05.328Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-05T23:12:05.332Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-05T23:13:24.306Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-05T23:13:24.307Z] INFO: Kiro CLI sync: start 
+[2026-08-05T23:13:24.777Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-05T23:13:25.103Z] INFO: Kiro usage (DJaap@us.ci.org): 54.2/1000 (5%) 
+[2026-08-06T16:07:19.352Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T16:07:19.352Z] INFO: Kiro CLI sync: start 
+[2026-08-06T16:07:19.781Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T16:07:20.163Z] INFO: Kiro usage (DJaap@us.ci.org): 55.93/1000 (6%) 
+[2026-08-06T16:18:19.243Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T16:18:19.243Z] INFO: Kiro CLI sync: start 
+[2026-08-06T16:18:19.624Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T16:18:20.000Z] INFO: Kiro usage (DJaap@us.ci.org): 55.93/1000 (6%) 
+[2026-08-06T20:14:16.064Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-06T20:14:16.424Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-06T20:14:16.428Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-06T20:14:16.711Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-06T20:14:16.827Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-06T20:14:16.830Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-06T20:14:26.984Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T20:14:26.984Z] INFO: Kiro CLI sync: start 
+[2026-08-06T20:14:27.533Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T20:14:27.857Z] INFO: Kiro usage (DJaap@us.ci.org): 55.93/1000 (6%) 
+[2026-08-06T22:56:22.329Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T22:56:22.331Z] INFO: Kiro CLI sync: start 
+[2026-08-06T22:56:22.828Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T22:56:23.162Z] INFO: Kiro usage (DJaap@us.ci.org): 58.97/1000 (6%) 
+[2026-08-06T22:58:17.569Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T22:58:17.570Z] INFO: Kiro CLI sync: start 
+[2026-08-06T22:58:17.942Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T22:58:18.387Z] INFO: Kiro usage (DJaap@us.ci.org): 59.16/1000 (6%) 
+[2026-08-06T23:03:09.328Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T23:03:09.330Z] INFO: Kiro CLI sync: start 
+[2026-08-06T23:03:09.668Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T23:03:10.054Z] INFO: Kiro usage (DJaap@us.ci.org): 59.5/1000 (6%) 
+[2026-08-06T23:04:43.961Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-06T23:04:43.962Z] INFO: Kiro CLI sync: start 
+[2026-08-06T23:04:44.345Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-06T23:04:44.681Z] INFO: Kiro usage (DJaap@us.ci.org): 59.67/1000 (6%) 
+[2026-08-07T00:02:15.731Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-07T00:02:16.134Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-07T00:02:16.145Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-07T15:45:03.306Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-07T15:45:03.307Z] INFO: Kiro CLI sync: start 
+[2026-08-07T15:45:03.877Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-07T15:45:04.218Z] INFO: Kiro usage (DJaap@us.ci.org): 61.43/1000 (6%) 
+[2026-08-07T16:27:36.206Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-07T16:27:36.206Z] INFO: Kiro CLI sync: start 
+[2026-08-07T16:27:36.578Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-07T16:27:36.935Z] INFO: Kiro usage (DJaap@us.ci.org): 61.43/1000 (6%) 
+[2026-08-07T17:31:47.640Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-07T17:31:47.994Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-07T17:31:48.000Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-07T17:35:38.586Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-07T17:35:38.586Z] INFO: Kiro CLI sync: start 
+[2026-08-07T17:35:39.152Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-07T17:35:39.481Z] INFO: Kiro usage (DJaap@us.ci.org): 62.65/1000 (6%) 
+[2026-08-10T19:17:48.690Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-10T19:17:49.069Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-10T19:17:49.074Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-10T19:17:59.032Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-10T19:17:59.032Z] INFO: Kiro CLI sync: start 
+[2026-08-10T19:17:59.575Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-10T19:17:59.945Z] INFO: Kiro usage (DJaap@us.ci.org): 63.63/1000 (6%) 
+[2026-08-10T23:32:43.122Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-10T23:32:43.122Z] INFO: Kiro CLI sync: start 
+[2026-08-10T23:32:43.586Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-10T23:32:43.920Z] INFO: Kiro usage (DJaap@us.ci.org): 63.72/1000 (6%) 
+[2026-08-10T23:36:15.265Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-10T23:36:15.266Z] INFO: Kiro CLI sync: start 
+[2026-08-10T23:36:15.578Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-10T23:36:15.971Z] INFO: Kiro usage (DJaap@us.ci.org): 63.98/1000 (6%) 
+[2026-08-11T17:06:39.153Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T17:06:39.548Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-11T17:06:39.554Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T17:06:57.857Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T17:06:57.970Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-11T17:06:57.972Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T17:07:07.849Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-11T17:07:07.849Z] INFO: Kiro CLI sync: start 
+[2026-08-11T17:07:08.393Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-11T17:07:08.721Z] INFO: Kiro usage (DJaap@us.ci.org): 65.28/1000 (7%) 
+[2026-08-11T18:10:37.528Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T18:10:37.786Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-11T18:10:37.790Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T18:13:24.029Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-11T18:13:24.030Z] INFO: Kiro CLI sync: start 
+[2026-08-11T18:13:24.531Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-11T18:13:24.871Z] INFO: Kiro usage (DJaap@us.ci.org): 66.82/1000 (7%) 
+[2026-08-11T20:21:46.708Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T20:21:47.046Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-11T20:21:47.050Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T20:21:55.468Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-11T20:21:55.468Z] INFO: Kiro CLI sync: start 
+[2026-08-11T20:21:56.031Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-11T20:21:56.366Z] INFO: Kiro usage (DJaap@us.ci.org): 83.99/1000 (8%) 
+[2026-08-11T21:32:02.225Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T21:32:02.504Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-11T21:32:02.510Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-11T21:34:56.300Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-11T21:34:56.300Z] INFO: Kiro CLI sync: start 
+[2026-08-11T21:34:56.799Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-11T21:34:57.142Z] INFO: Kiro usage (DJaap@us.ci.org): 85.54/1000 (9%) 
+[2026-08-11T23:57:39.956Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-11T23:57:39.957Z] INFO: Kiro CLI sync: start 
+[2026-08-11T23:57:40.426Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-11T23:57:40.760Z] INFO: Kiro usage (DJaap@us.ci.org): 88.77/1000 (9%) 
+[2026-08-12T00:00:06.461Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T00:00:06.462Z] INFO: Kiro CLI sync: start 
+[2026-08-12T00:00:06.832Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T00:00:07.098Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T00:00:07.316Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T00:00:07.316Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-12T00:00:07.316Z] INFO: Kiro usage (DJaap@us.ci.org): 88.77/1000 (9%) 
+[2026-08-12T15:28:04.208Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T15:28:04.606Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-12T15:28:04.611Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T15:28:19.275Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T15:28:19.276Z] INFO: Kiro CLI sync: start 
+[2026-08-12T15:28:19.680Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T15:28:20.120Z] INFO: Kiro usage (DJaap@us.ci.org): 88.77/1000 (9%) 
+[2026-08-12T18:15:42.076Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T18:15:42.411Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-12T18:15:42.417Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T18:15:50.388Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T18:15:50.388Z] INFO: Kiro CLI sync: start 
+[2026-08-12T18:15:50.861Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T18:15:51.250Z] INFO: Kiro usage (DJaap@us.ci.org): 91.24/1000 (9%) 
+[2026-08-12T19:11:38.497Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:11:38.733Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:11:59.762Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T19:11:59.763Z] INFO: Kiro CLI sync: start 
+[2026-08-12T19:12:00.217Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T19:12:00.479Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:12:00.943Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:12:00.943Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:12:00.944Z] INFO: Kiro usage (DJaap@us.ci.org): 96.66/1000 (10%) 
+[2026-08-12T19:13:08.364Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:08.605Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:08.912Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:09.105Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:19.300Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T19:13:19.301Z] INFO: Kiro CLI sync: start 
+[2026-08-12T19:13:19.682Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T19:13:19.937Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:20.168Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:20.169Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:20.169Z] INFO: Kiro usage (DJaap@us.ci.org): 96.66/1000 (10%) 
+[2026-08-12T19:13:21.553Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:21.768Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:22.111Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:22.329Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:46.861Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T19:13:46.861Z] INFO: Kiro CLI sync: start 
+[2026-08-12T19:13:47.210Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T19:13:47.477Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:47.664Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:47.664Z] WARN: Startup usage fetch failed; keeping stored value {"email":"DJaap@us.ci.org","error":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:47.664Z] INFO: Kiro usage (DJaap@us.ci.org): 96.66/1000 (10%) 
+[2026-08-12T19:13:52.448Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:52.646Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:52.954Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T19:13:53.202Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-12T22:46:17.152Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T22:46:17.152Z] INFO: Kiro CLI sync: start 
+[2026-08-12T22:46:17.690Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T22:46:18.052Z] INFO: Kiro usage (DJaap@us.ci.org): 105.72/1000 (11%) 
+[2026-08-12T23:17:18.606Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-12T23:17:18.607Z] INFO: Kiro CLI sync: start 
+[2026-08-12T23:17:19.035Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-12T23:17:19.553Z] INFO: Kiro usage (DJaap@us.ci.org): 105.72/1000 (11%) 
+[2026-08-13T15:02:44.468Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T15:02:44.469Z] INFO: Kiro CLI sync: start 
+[2026-08-13T15:02:44.877Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T15:02:45.256Z] INFO: Kiro usage (DJaap@us.ci.org): 105.72/1000 (11%) 
+[2026-08-13T19:27:07.736Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T19:27:07.736Z] INFO: Kiro CLI sync: start 
+[2026-08-13T19:27:08.244Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T19:27:08.563Z] INFO: Kiro usage (DJaap@us.ci.org): 127.73/1000 (13%) 
+[2026-08-13T19:28:58.971Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T19:28:58.972Z] INFO: Kiro CLI sync: start 
+[2026-08-13T19:28:59.409Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T19:28:59.789Z] INFO: Kiro usage (DJaap@us.ci.org): 127.73/1000 (13%) 
+[2026-08-13T22:15:35.446Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T22:15:35.447Z] INFO: Kiro CLI sync: start 
+[2026-08-13T22:15:35.953Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T22:15:36.300Z] INFO: Kiro usage (DJaap@us.ci.org): 127.73/1000 (13%) 
+[2026-08-13T22:21:28.698Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T22:21:28.699Z] INFO: Kiro CLI sync: start 
+[2026-08-13T22:21:29.063Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T22:21:29.458Z] INFO: Kiro usage (DJaap@us.ci.org): 127.73/1000 (13%) 
+[2026-08-13T22:44:13.511Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-13T22:44:13.512Z] INFO: Kiro CLI sync: start 
+[2026-08-13T22:44:13.849Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-13T22:44:14.179Z] INFO: Kiro usage (DJaap@us.ci.org): 127.73/1000 (13%) 
+[2026-08-17T15:38:21.106Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-17T15:38:21.107Z] INFO: Kiro CLI sync: start 
+[2026-08-17T15:38:21.595Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-17T15:38:21.977Z] INFO: Kiro usage (DJaap@us.ci.org): 131.34/1000 (13%) 
+[2026-08-17T17:19:30.174Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-17T17:19:30.465Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-17T17:19:30.468Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-17T17:20:17.566Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-17T17:20:17.567Z] INFO: Kiro CLI sync: start 
+[2026-08-17T17:20:17.979Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-17T17:20:18.377Z] INFO: Kiro usage (DJaap@us.ci.org): 140.44/1000 (14%) 
+[2026-08-17T20:26:13.652Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-17T20:26:14.017Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-17T20:26:14.022Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-17T21:00:25.383Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-17T21:00:25.383Z] INFO: Kiro CLI sync: start 
+[2026-08-17T21:00:25.894Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-17T21:00:26.260Z] INFO: Kiro usage (DJaap@us.ci.org): 145.21/1000 (15%) 
