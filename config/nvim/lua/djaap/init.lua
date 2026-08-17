@@ -21,3 +21,4 @@ require("lazy").setup("plugins", opts)
 
 require("djaap.settings")
 require("djaap.keybindings")
+require("djaap.commands")
