@@ -21,6 +21,7 @@ in
     "${nushellConfigDir}/env.nu".source = symLink "${repoPath}/config/nushell/env.nu";
     "${nushellConfigDir}/git-completions.nu".source = symLink "${repoPath}/config/nushell/git-completions.nu";
     "${nushellConfigDir}/gh-completions.nu".source = symLink "${repoPath}/config/nushell/gh-completions.nu";
+    "${nushellConfigDir}/mise.nu".source = symLink "${repoPath}/config/nushell/mise.nu";
     # neovide config
     "${config.home.homeDirectory}/.config/neovide/config.toml".source = symLink "${repoPath}/config/neovide/config.toml";
   };
