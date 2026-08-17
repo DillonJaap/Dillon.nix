@@ -40,7 +40,7 @@ $env.config = {
 }
 
 
-source ~/.config/nushell/mise.nu
+source mise.nu
 
 # load opam env
 if (which opam | is-not-empty) {
