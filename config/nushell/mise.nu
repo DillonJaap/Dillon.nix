@@ -17,7 +17,10 @@ def --env "update-env" [] {
 }
 export-env {
   
-  '' | parse vars | update-env
+  'set,PATH,/nix/var/nix/profiles/default/bin:/Users/DJaap/.nix-profile/bin:/opt/homebrew/bin:/Users/DJaap/.local/share/nvim/mason/bin:/Users/DJaap/.opam/bonsai-practice-5.2.1/bin:/nix/var/nix/profiles/default/bin:/Users/DJaap/.nix-profile/bin:/opt/homebrew/bin:/Users/DJaap/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/Applications/kitty.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/Users/DJaap/.config/herd-lite/bin:/Users/DJaap/Library/Application Support/JetBrains/Toolbox/scripts:/run/current-system/sw/bin:/Users/DJaap/go/bin:/Users/DJaap/bin:/Users/DJaap/.scripts:/Users/DJaap/.local/bin:/Users/DJaap/.opam/default/bin:/Users/DJaap/Library/Android/sdk/cmdline-tools/latest/bin:/Users/DJaap/Library/Android/sdk/platform-tools:/Users/DJaap/Library/Android/sdk/emulator:/Users/DJaap/development/flutter/bin:/opt/homebrew/bin/:/usr/local/bin:/Users/DJaap/.local/bin/:/Users/DJaap/.opam/default/bin/:/nix/store/vq3n2p72v1gbi9vvckksinrmvr30673x-curl-8.19.0-bin/bin:/nix/store/z54v9rgq7ijlq8zjrl9cvqw73cdsw8ad-getconf-system_cmds-1026.140.2/bin:/nix/store/hs1xz135wmqql58x74kkz8z55r9skfby-unzip-6.0/bin:/nix/store/p5rx4ipva32mmz9x4l12mqh4rw5r8bzk-neovim-ruby-env/bin:/Users/DJaap/.config/herd-lite/bin:/Users/DJaap/Library/Application Support/JetBrains/Toolbox/scripts:/run/current-system/sw/bin:/Users/DJaap/go/bin:/Users/DJaap/bin:/Users/DJaap/.scripts:/Users/DJaap/.local/bin:/Users/DJaap/.opam/default/bin:/Users/DJaap/Library/Android/sdk/cmdline-tools/latest/bin:/Users/DJaap/Library/Android/sdk/platform-tools:/Users/DJaap/Library/Android/sdk/emulator:/Users/DJaap/development/flutter/bin
+hide,MISE_SHELL,
+hide,__MISE_DIFF,
+hide,__MISE_DIFF,' | parse vars | update-env
   $env.MISE_SHELL = "nu"
   let mise_hook = {
     condition: { "MISE_SHELL" in $env }

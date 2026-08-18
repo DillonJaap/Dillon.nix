@@ -328,3 +328,11 @@
 [2026-08-17T22:03:37.572Z] INFO: Kiro CLI sync: start 
 [2026-08-17T22:03:38.069Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
 [2026-08-17T22:03:38.429Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 
+[2026-08-17T23:24:40.190Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-17T23:24:40.190Z] INFO: Kiro CLI sync: start 
+[2026-08-17T23:24:40.620Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-17T23:24:40.988Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 
+[2026-08-17T23:38:10.381Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-17T23:38:10.382Z] INFO: Kiro CLI sync: start 
+[2026-08-17T23:38:10.754Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-17T23:38:11.158Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 

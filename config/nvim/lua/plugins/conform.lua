@@ -25,11 +25,11 @@ return {
 				nix = { "nixpkgs-fmt" },
 				ocaml = { "ocamlformat" },
 				json = { "prettier" },
-				sql = { "sqlfluff" },
+				sql = { "sqlfmt" },
 			},
 			formatters = {
-				sqlfluff = {
-					args = { "fix", "--dialect", "sqlite", "-" },
+				sqlfmt = {
+					args = { "-" },
 					require_cwd = false,
 				},
 			},

@@ -7,6 +7,81 @@ if vim.lsp.document_color then
 end
 
 -- ---------------------------------------------------------------------------
+-- Helper: realign markdown tables in hover popovers
+-- sqls emits ragged table rows and nvim renders raw markdown text, so pipes
+-- never line up. Pad all cells so columns align.
+-- ---------------------------------------------------------------------------
+local function is_table_row(line)
+	return line:match("^%s*|") ~= nil and line:match("|%s*$") ~= nil
+end
+
+local function align_table_block(block)
+	local rows = {}
+	for _, line in ipairs(block) do
+		local body = line:match("^%s*|(.*)|%s*$")
+		local cells = vim.split(body, "|")
+		for idx, cell in ipairs(cells) do
+			cells[idx] = vim.trim(cell)
+		end
+		rows[#rows + 1] = cells
+	end
+
+	local widths = {}
+	for _, cells in ipairs(rows) do
+		for idx, cell in ipairs(cells) do
+			widths[idx] = math.max(widths[idx] or 0, vim.fn.strdisplaywidth(cell))
+		end
+	end
+
+	local aligned = {}
+	for _, cells in ipairs(rows) do
+		local rendered = {}
+		for idx, cell in ipairs(cells) do
+			local w = widths[idx] or 0
+			if cell:match("^:?%-+:?$") then
+				local left = cell:match("^:")
+				local right = cell:match(":$")
+				local dashes = math.max(1, w - (left and 1 or 0) - (right and 1 or 0))
+				cell = (left and ":" or "") .. string.rep("-", dashes) .. (right and ":" or "")
+				cell = cell .. string.rep("-", w - #cell)
+			end
+			rendered[idx] = " " .. cell .. string.rep(" ", w - vim.fn.strdisplaywidth(cell)) .. " "
+		end
+		aligned[#aligned + 1] = "|" .. table.concat(rendered, "|") .. "|"
+	end
+	return aligned
+end
+
+local convert_to_markdown = vim.lsp.util.convert_input_to_markdown_lines
+vim.lsp.util.convert_input_to_markdown_lines = function(input, contents)
+	local lines = convert_to_markdown(input, contents)
+	local out = {}
+	local block = {}
+	local in_code = false
+	local function flush()
+		if #block > 0 then
+			vim.list_extend(out, align_table_block(block))
+			block = {}
+		end
+	end
+	for _, line in ipairs(lines) do
+		line = line:gsub("&nbsp;", " ")
+		if line:match("^%s*```") then
+			flush()
+			in_code = not in_code
+			out[#out + 1] = line
+		elseif not in_code and is_table_row(line) then
+			block[#block + 1] = line
+		else
+			flush()
+			out[#out + 1] = line
+		end
+	end
+	flush()
+	return out
+end
+
+-- ---------------------------------------------------------------------------
 -- Helper: LSP keymaps
 -- ---------------------------------------------------------------------------
 local function register_lsp_keys(bufnr)

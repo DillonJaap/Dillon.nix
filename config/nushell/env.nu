@@ -18,11 +18,14 @@
 # them for future reference.
 
 
-$env.path ++= [
+# /usr/bin must come after these, so prepend instead of append (python3 etc.)
+$env.path = [
   "/nix/var/nix/profiles/default/bin"
   "~/.nix-profile/bin"
   "/opt/homebrew/bin"
-  "/Users/DJaap/Library/Python/3.9/bin"
+] ++ $env.path
+
+$env.path ++= [
   "/Users/DJaap/.config/herd-lite/bin"
   "/Users/DJaap/Library/Application Support/JetBrains/Toolbox/scripts"
   "/run/current-system/sw/bin"
@@ -39,3 +42,9 @@ $env.path ++= [
 
 $env.ANDROID_HOME = "~/Library/Android/sdk"
 $env.ANDROID_SDK_ROOT = "/home/dillon/Android/Sdk"
+
+# mise: regenerate mise.nu each startup so it always matches the installed mise
+if (which mise | is-not-empty) {
+  let mise_path = $nu.default-config-dir | path join mise.nu
+  ^mise activate nu | save $mise_path --force
+}

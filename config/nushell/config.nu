@@ -40,7 +40,7 @@ $env.config = {
 }
 
 
-source mise.nu
+use ($nu.default-config-dir | path join mise.nu)
 
 # load opam env
 if (which opam | is-not-empty) {
