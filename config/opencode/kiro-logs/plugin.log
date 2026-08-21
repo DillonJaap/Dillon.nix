@@ -336,3 +336,47 @@
 [2026-08-17T23:38:10.382Z] INFO: Kiro CLI sync: start 
 [2026-08-17T23:38:10.754Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
 [2026-08-17T23:38:11.158Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 
+[2026-08-18T14:31:02.941Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-18T14:31:03.246Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-18T14:31:03.251Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-18T14:31:10.724Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-18T14:31:10.724Z] INFO: Kiro CLI sync: start 
+[2026-08-18T14:31:11.131Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-18T14:31:11.480Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 
+[2026-08-18T19:02:56.715Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-18T19:02:56.716Z] INFO: Kiro CLI sync: start 
+[2026-08-18T19:02:57.233Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-18T19:02:57.569Z] INFO: Kiro usage (DJaap@us.ci.org): 147.86/1000 (15%) 
+[2026-08-18T19:57:59.631Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-18T19:57:59.840Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-18T20:10:07.378Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-18T20:10:07.379Z] INFO: Kiro CLI sync: start 
+[2026-08-18T20:10:07.853Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-18T20:10:08.226Z] INFO: Kiro usage (DJaap@us.ci.org): 154.38/1000 (15%) 
+[2026-08-19T04:37:28.222Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-19T04:37:28.223Z] INFO: Kiro CLI sync: start 
+[2026-08-19T04:37:28.644Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-19T04:37:29.045Z] INFO: Kiro usage (DJaap@us.ci.org): 177.69/1000 (18%) 
+[2026-08-19T15:51:03.318Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-19T15:51:03.319Z] INFO: Kiro CLI sync: start 
+[2026-08-19T15:51:03.829Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-19T15:51:04.200Z] INFO: Kiro usage (DJaap@us.ci.org): 177.76/1000 (18%) 
+[2026-08-19T15:51:15.492Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-19T15:51:15.492Z] INFO: Kiro CLI sync: start 
+[2026-08-19T15:51:15.857Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-19T15:51:16.211Z] INFO: Kiro usage (DJaap@us.ci.org): 177.76/1000 (18%) 
+[2026-08-19T17:40:44.634Z] ERROR: Token refresh failed {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-19T17:40:44.930Z] WARN: Kiro CLI sync: failed to fetch usage/email; falling back {"authMethod":"idc","serviceRegion":"us-east-1","oidcRegion":"us-east-1"}
+[2026-08-19T17:40:44.937Z] ERROR: Token refresh unrecoverable {"email":"DJaap@us.ci.org","code":"invalid_request","message":"Refresh failed: Invalid token provided"}
+[2026-08-19T17:41:13.074Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-19T17:41:13.075Z] INFO: Kiro CLI sync: start 
+[2026-08-19T17:41:13.588Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-19T17:41:13.969Z] INFO: Kiro usage (DJaap@us.ci.org): 178.4/1000 (18%) 
+[2026-08-19T23:58:27.252Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-19T23:58:27.253Z] INFO: Kiro CLI sync: start 
+[2026-08-19T23:58:27.801Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-19T23:58:28.146Z] INFO: Kiro usage (DJaap@us.ci.org): 179.27/1000 (18%) 
+[2026-08-21T17:28:14.346Z] INFO: Auth init {"autoSyncKiroCli":true}
+[2026-08-21T17:28:14.347Z] INFO: Kiro CLI sync: start 
+[2026-08-21T17:28:14.866Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
+[2026-08-21T17:28:15.443Z] INFO: Kiro usage (DJaap@us.ci.org): 179.44/1000 (18%) 
