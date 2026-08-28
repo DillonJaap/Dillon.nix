@@ -2,7 +2,84 @@
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
     "@plannotator/opencode@latest",
-    "opencode-kiro",
-    "@zhafron/opencode-kiro-auth"
-  ]
+    "opencode-kiro"
+  ],
+  "provider": {
+    "kiro": {
+      "npm": "kiro-acp-ai-provider",
+      "name": "Kiro",
+      "models": {
+        "auto": {
+          "name": "Auto",
+          "api": { "id": "auto" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "claude-sonnet-4": {
+          "name": "Claude Sonnet 4.0",
+          "api": { "id": "claude-sonnet-4" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "claude-sonnet-4-5": {
+          "name": "Claude Sonnet 4.5",
+          "api": { "id": "claude-sonnet-4.5" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6",
+          "api": { "id": "claude-sonnet-4.6" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5",
+          "api": { "id": "claude-sonnet-5" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-haiku-4-5": {
+          "name": "Claude Haiku 4.5",
+          "api": { "id": "claude-haiku-4.5" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "claude-opus-4-5": {
+          "name": "Claude Opus 4.5",
+          "api": { "id": "claude-opus-4.5" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6",
+          "api": { "id": "claude-opus-4.6" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-opus-4-7": {
+          "name": "Claude Opus 4.7",
+          "api": { "id": "claude-opus-4.7" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-opus-4-8": {
+          "name": "Claude Opus 4.8",
+          "api": { "id": "claude-opus-4.8" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-opus-5": {
+          "name": "Claude Opus 5",
+          "api": { "id": "claude-opus-5" },
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "api": { "id": "gpt-5.6-luna" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "api": { "id": "gpt-5.6-sol" },
+          "limit": { "context": 200000, "output": 64000 }
+        },
+        "gpt-5.6-terra": {
+          "name": "GPT-5.6 Terra",
+          "api": { "id": "gpt-5.6-terra" },
+          "limit": { "context": 200000, "output": 64000 }
+        }
+      }
+    }
+  }
 }

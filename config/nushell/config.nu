@@ -24,7 +24,7 @@
 source "git-completions.nu"
 source "gh-completions.nu" 
 
-$env.path ++= ["/opt/homebrew/bin/" "/usr/local/bin" "~/.local/bin/" "~/.opam/default/bin/"]
+$env.path ++= ["/opt/homebrew/bin/" "/usr/local/bin" "~/.local/bin/" "~/.opam/default/bin/" "~/.opencode/bin"]
 
 $env.config = {
   show_banner: false
