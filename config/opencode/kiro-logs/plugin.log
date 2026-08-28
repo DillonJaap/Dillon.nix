@@ -380,3 +380,5 @@
 [2026-08-21T17:28:14.347Z] INFO: Kiro CLI sync: start 
 [2026-08-21T17:28:14.866Z] INFO: Kiro CLI sync: done {"importedAccounts":1}
 [2026-08-21T17:28:15.443Z] INFO: Kiro usage (DJaap@us.ci.org): 179.44/1000 (18%) 
+[2026-08-21T22:16:37.268Z] INFO: Bootstrap: Kiro CLI DB not found, skipping 
+[2026-08-23T18:22:39.919Z] INFO: Bootstrap: Kiro CLI DB not found, skipping 
