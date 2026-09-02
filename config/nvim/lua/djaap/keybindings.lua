@@ -87,10 +87,6 @@ wk.add({
 
 -- navigate panes
 wk.add({
-	{ "<c-k>", ":wincmd k<CR>", desc = "Focus window above" },
-	{ "<c-j>", ":wincmd j<CR>", desc = "Focus window below" },
-	{ "<c-h>", ":wincmd h<CR>", desc = "Focus window to the left" },
-	{ "<c-l>", ":wincmd l<CR>", desc = "Focus window to the right" },
 	{ "<S-Up>", ":wincmd k<CR>", desc = "Focus window above" },
 	{ "<S-Down>", ":wincmd j<CR>", desc = "Focus window below" },
 	{ "<S-Left>", ":wincmd h<CR>", desc = "Focus window to the left" },
