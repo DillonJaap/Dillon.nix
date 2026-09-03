@@ -15,6 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
+
   };
 
   outputs = inputs@{ self, home-manager, nixpkgs, nixpkgs-unstable, nixgl, ... }:
@@ -33,6 +37,8 @@ let
       extraSpecialArgs = {
         inherit username repoPath;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+        # Neovim nightly, built against the pinned nixpkgs.
+        nvim-nightly = inputs.neovim-nightly-overlay.packages.${system}.default;
       };
       modules = [
         ./module/home-manager.nix
@@ -45,6 +51,13 @@ let
     };
 in
   {
+    # Binary cache for neovim-nightly-overlay builds (trusted via
+    # always-allow-substituters in the local nix config).
+    nixConfig = {
+      extra-substituters = [ "https://nix-community.cachix.org" ];
+      extra-trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7kyed2GjQKOOv2L9CpBiYw=" ];
+    };
+
     homeConfigurations = {
       mac-aarch64 = mkHome {
         system = "aarch64-darwin";

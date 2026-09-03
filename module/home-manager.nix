@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, config, username, repoPath, ... }:
+{ pkgs, pkgs-unstable, nvim-nightly, config, username, repoPath, ... }:
 let
   symLink = config.lib.file.mkOutOfStoreSymlink;
   isDarwin = pkgs.stdenv.isDarwin;
@@ -219,7 +219,7 @@ in
     neovim = {
       enable = true;
       defaultEditor = true;
-      package = pkgs-unstable.neovim-unwrapped;
+      package = nvim-nightly;
     };
 
   };
