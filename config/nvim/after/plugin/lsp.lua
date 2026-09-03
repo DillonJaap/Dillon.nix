@@ -259,7 +259,12 @@ vim.lsp.config("cypher_ls", {
 -- Gleam
 vim.lsp.enable("gleam")
 vim.lsp.config("gleam", {
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		-- gleam LSP folds are worse than treesitter's; hide the folding
+		-- capability so nvim-origami keeps treesitter foldexpr for gleam
+		client.server_capabilities.foldingRangeProvider = false
+	end,
 	capabilities = capabilities,
 })
 
