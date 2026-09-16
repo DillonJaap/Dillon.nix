@@ -375,12 +375,14 @@ vim.lsp.config("tailwindcss", {
 		"vue",
 		"svelte",
 		"gleam",
+		"go",
 	},
 	settings = {
 		tailwindCSS = {
-			includeLanguages = { gleam = "html" },
+			includeLanguages = { gleam = "html", go = "html" },
 			experimental = {
 				classRegex = {
+					{ "Class(?:es)?[({]([^)}]*)[)}]", '["`]([^"`]*)["`]' }, -- Golang
 					{ '\\w+\\.class\\("([^"]*)"\\)', '([^"]*)' },
 					{ "\\w+\\.class\\('([^']*)'\\)", "([^']*)" },
 					{ 'class\\("([^"]*)"\\)', '([^"]*)' },
